@@ -152,6 +152,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-learning-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/05/Python-learning-1/">Python - learning -1</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/05/Python-learning-1/" class="archive-article-date">
+  	<time datetime="2020-04-05T09:21:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近开始学习Python，进步比较慢。我已经把基础课程都学习完了。感觉可以开始上手项目了。后来发现，其实根本不是这样。于是开始搜索了31一个python小例子。由于学习内容比较杂乱，经常是这个学习完了，就忘了那个。我现在想想，关键是没有总结和记录，当天找到的solution，回头过几天就忘记了。所以决定开文章来记录具体学习了什么。如下代码全是操的，我发现我其实根部就没过基础这关。了解下面代码就已经很花时间了。</p>
+<ol>
+<li>batch_file_rename.py 批量重命名指定目录下面所有文件的后缀名。<br>import os</li>
+</ol>
+<p>def batch_rename(work_dir, old_ext, new_ext):<br>     os.chdir(work_dir)</p>
+<pre><code>for filename in os.listdir(work_dir):
+     Get the file extension
+    split_file = filename.split(&apos;.&apos;)
+
+    if old_ext == split_file[-1]:
+        new_name = split_file[0] +&apos;.&apos;+new_ext
+
+        os.rename(filename,new_name)</code></pre><p> batch_rename(‘/Users/Yu/Desktop/Python_Practice’,’txt’,’py’)</p>
+<p> 上面这个例子，第一次知道 可以 import os，然后 python 可以后计算机进行互动。当中有些重要的小function，os.chdir, os.rename,os.path.join</p>
+<ol start="2">
+<li><p>create_dir_if_not_there.py 如果不存在的目录。</p>
+<p>import os</p>
+<p> home = os.path.expanduser(“~”)<br>print(home)  </p>
+<p>if not os.path.exists(os.path.join(home, TESTDIR)):  </p>
+<pre><code>os.makedirs(os.path.join(home, TESTDIR))</code></pre><p>这里的知识点，主要还是 对于 os 的使用。比如 os.makedirs,os.path.exists,os.path.expanduser</p>
+</li>
+</ol>
+<p>3.Fast Youtube Downloader 多线程高速下载Youtube视频</p>
+<p>这个case 刚开始看答案的时候，一头雾水。仔细搜索后才知道 youtube-dl 和 aria2 的使用。但是关于 multi-thread的用法还是没有理解，我决定先再放一放继续下面的项目。在 这个项目中需要先安装youtube-dl 和  aria2 之后才能使用，同时由于网路原因直接 terminal下载时有些问题。</p>
+<p>youtube-dl video_link –external-downloader aria2c –external-downloader-args -x ‘2’<br>但使用下面这个 code 可以正常加速下载：</p>
+<p>import subprocess<br>import sys</p>
+<p>video_link, threads = sys.argv[1], sys.argv[2]<br>subprocess.call([<br>    “youtube-dl”,<br>    video_link,<br>    “–external-downloader”,<br>    “aria2c”,<br>    “–external-downloader-args”,<br>    “-x” + threads<br>])</p>
+<p>在学习这个过程中，我还知道 能够使用aria2 下载 磁力链接 和 普通下载链接的方法，我都亲自试了一下，但感谢下载速度也一般啊。<br>$ aria2c <a href="http://example.org/mylinux.iso" target="_blank" rel="noopener">http://example.org/mylinux.iso</a><br>$ aria2c <a href="http://example.org/mylinux.torrent" target="_blank" rel="noopener">http://example.org/mylinux.torrent</a><br>$ aria2c ‘magnet:?xt=urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C’<br>$ aria2c <a href="http://example.org/mylinux.metalink" target="_blank" rel="noopener">http://example.org/mylinux.metalink</a><br>$ aria2c -i uris.txt</p>
+<ol start="4">
+<li>Google Image Downloader 根据指定词语从Google搜索图片并下载。<br>拿到这个例子后，我一点头绪都没有，首先先去谷歌搜索了一下。刚一搜索，我去，有人已经编写好这个module了，理论上来说，我只要pip install 这个 model，就可以 直接调用module 下载Google 图片了。我到了 module 这个 github 页面看了一下，1000多行 code，叫我自己编，是不可能编出来的。</li>
+</ol>
+<p>pip3 install google_images_download<br>googleimagesdownload -k “python” -l 20</p>
+<p>-k 代表 关键词，后面跟要搜索的内容，-l 后面跟要下载的数量。一开始我觉得太简单了，后来出现报错。我以为是我操作有问题，但这么简单怎么会有问题。一开始我是觉得需要下载一个Chromedriver, 但后来发现其实不是。于是，我仔细调查了一下，发现，谷歌修改了 image format 后，使用同样 module 是无法下载了。经过一番search，参照GitHub上面大神修改源代码后，成功下载图片。但是据说limit 100 的情况无法解决。下载图片数量需要少于100，同时我看还是会有些图片format原因无法下载。</p>
+<p>googleimagesdownload -k ‘Julia’ -l 5 –chromedriver=”./chromedriver”</p>
+<p>总之，勉强使用这个module成功下载了图片。</p>
+<p>To be continue…</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/05/Python-learning-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-最近很多新闻报道和股市的看法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
