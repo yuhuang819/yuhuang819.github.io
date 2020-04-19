@@ -152,6 +152,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-learning-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/Python-learning-3/">Python - learning -3</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/Python-learning-3/" class="archive-article-date">
+  	<time datetime="2020-04-13T15:36:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天我们继续学习Python。</p>
+<p>9、logs.py 搜索指定目录下所有*.log文件，并压缩以日期格式转储。</p>
+<p>在做这个practice之前，我先花半小时的时间了解 log 文件是什么，干什么用的，然后python如何生成log 文件等。 </p>
+<p>import logging</p>
+<p>LOG_FORMAT = “%(asctime)s - %(levelname)s - %(message)s”<br>logging.basicConfig(filename=’my.log’, level=logging.DEBUG, format=LOG_FORMAT)<br>logging.log(logging.DEBUG, “This is a debug log.”)<br>logging.log(logging.INFO, “This is a info log.”)<br>logging.log(logging.WARNING, “This is a warning log.”)<br>logging.log(logging.ERROR, “This is a error log.”)<br>logging.log(logging.CRITICAL, “This is a critical log.”)</p>
+<p>log 文件是在给实际程序运行时，记录一些重要报错信息，然后程序员可以根据log file提供的信息修正程序，大批量时候甚至可以分析用户的行为。</p>
+<p>弄清楚logfile 之后，开始看这个代码怎么写。首先，使用os.listdir把对应文件中文件提取，然后使用files.endswith 抓出相应结尾的文件如果.log，最后使用zipfile 将对应文件zip起来：</p>
+<p>import os  # Load the Library Module<br>import zipfile</p>
+<p>zip = zipfile.ZipFile(‘log.zip’,’w’)<br>logsdir = “/Users/Yu/Desktop”  # Set the Variable logsdir</p>
+<p>for files in os.listdir(logsdir):  # Find all the files in the directory<br>    if files.endswith(“.log”):  # Check to ensure the files in the directory end in .log<br>        zip.write(files)</p>
+<p>10、move_files_over_x_days.py 移动所有满足指定时间日期的文件从源目录到目标文件。</p>
+<p>import os<br>import shutil<br>import time</p>
+<p>dst = ‘/Users/Yu/Desktop/Move_files’<br>src =’/Users/Yu/Desktop’<br>now = time.time()<br>days = 365<br>if not os.path.exists(dst):<br>    os.mkdir(dst)</p>
+<p>for f in os.listdir(src):  # Loop through all the files in the source directory<br>    if os.stat(f).st_mtime &lt; now - days * 86400:  # Work out how old they are, if they are older than 365 days old<br>        if os.path.isfile(f):  # Check it’s a file<br>            shutil.move(f, dst)  # Move the files<br>上述代码考察了 shutil, time 的使用。先用 listdir找出所有文件，然后filter 出上次修改时间大于xx天的文件，os.stat(f).st_mtime,然后用 shutil.move移动相应文件。</p>
+<p>To be continue…</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/Python-learning-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-邻里纠纷水管维修记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -772,73 +849,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/12/18/%E4%BF%9D%E7%BD%97%E8%AE%A9%E6%88%91%E6%83%B3%E8%B5%B7%E4%BA%86%E8%B0%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的新博客正式上线啦" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/16/%E6%88%91%E7%9A%84%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF%E5%95%A6/">我的新博客正式上线啦</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/16/%E6%88%91%E7%9A%84%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF%E5%95%A6/" class="archive-article-date">
-  	<time datetime="2019-12-16T14:53:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>晚上11点，发出第一篇文章。首先感想是愿世界和平。刚在纽约时报浏览了俄罗斯车臣战争的图片，随后想起香港的骚乱，然后试想未来或许发生的台海战争。总结，希望国家和社会稳定，世界和平。</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://cn.nytimes.com/slideshow/20191213/c13Chechen-ss/#1" target="_blank" rel="noopener">https://cn.nytimes.com/slideshow/20191213/c13Chechen-ss/#1</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/16/%E6%88%91%E7%9A%84%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF%E5%95%A6/">展开全文 >></a>
         </p>
       
 
