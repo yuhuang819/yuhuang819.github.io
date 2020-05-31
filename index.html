@@ -152,6 +152,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-学习入门与实践-操作列表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/26/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%93%8D%E4%BD%9C%E5%88%97%E8%A1%A8/">Python-学习入门与实践-操作列表</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/26/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%93%8D%E4%BD%9C%E5%88%97%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2020-05-26T00:38:02.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: Python 学习入门与实践 - 操作列表<br>date: 2020-05-26 08:38:02<br>tags:</p>
+<hr>
+<p>遍历整个列表：<br>for 循环：for magician in magicians:<br>                print(magician)<br>for 循环对列表的每个元素都循环执行指定的步骤，不管列表包含多少元素。<br>for 循环更多操作：for magician in magicians:<br>                    print(magician.title()+’ , that was a great trick!’)<br>for 循环中，想包含多少代码都可以，每个缩进的代码都是循环的一部分。<br>print语句中的换行符号 ‘.\n’<br>for 循环结束后执行一些操作：通常你需要提供总结性输出或执行程序必须完成的其它任务。在for 循环后没有锁进的代码都只执行一次。</p>
+<p>避免缩进错误，忘记缩进，不必要的缩进，循环后不必要的缩进，遗漏了冒号</p>
+<p>创建数值列表：<br>使用函数range():range(1,5),打印1-4，差一行。<br>使用list(),list()参数可以转化数字为列表：number = list(range(1,6))<br>指定步长，even_numbers = list(range(2,11,2)) 从2开始不断加2<br>两个星号（<strong>）表示乘方运算。<br>squares = []<br>for value in range(1,11):<br>    sqaures.append(value</strong>2)</p>
+<p>对数字列表执行简单统计：min(),max() and sum()<br>列表解析：squares = [value**2 for value in range(1,11)]<br>使用列表的一部分：切片：指定索引 - players = [‘x’,’y’,’z’,’d’] print(players[0:2])<br>如果你没有指定索引，python将自动从头开始，print(players[:4])<br>让切片终止于列表末尾：print(players[2:]) 或输出最后三名队员，players[-3:]<br>遍历切片：<br>for player in players[:3]:<br>    print..</p>
+<p>复制列表：可创建一个包含整个列表的切片，方法是[:]; firend_foods = my_foods[:]<br>倘若，我们只是简单地将my_foods 赋给 fried_foods,就不能得到两个列表。例如：firend_foods = my_foods 这里将my_foods 赋给 friend_foods 而不是将my_foods的副本存储到friend_foods。</p>
+<p>元组：不可变的列表，元组<br>定义元组：dimensions = (200,50)<br>遍历元组中的所有值：for dimension in dimensions:<br>修改元组变量：dimensions = (200,50), dimensions = (400,100) 给元组变量赋值是合法的。</p>
+<p>设置代码格式，缩进：将文件中制表符转换为空格。行长：建议每行不超过80字符。注释的行长不超过72字符。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/26/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%93%8D%E4%BD%9C%E5%88%97%E8%A1%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-底层人民的996" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -858,88 +930,9 @@
 
 
   
-    <article id="post-Python-learning-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/12/Python-learning-2/">Python - learning -2</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/12/Python-learning-2/" class="archive-article-date">
-  	<time datetime="2020-04-12T08:21:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天我们继续Python 的 学习。</p>
-<p>5.dir_test.py 检查目录 testdir 是否存在, 如果不存在则创建一个。<br>这个practice 有点和前面第二个相似，主要是考察 os.path 的用法。其中有两个重要的module分别是 os.path.exists 和 os.makedirs 后一个主要是生成新的目录。</p>
-<p>、、、<br>import os</p>
-<p>CheckDir = input(“Enter the name of the directory to check : “)<br>if os.path.exists(CheckDir):  # Checks if the dir exists<br>    print(“The directory exists”)<br>else:<br>    print(“No directory found for “ + CheckDir)  # Output if no directory<br>    os.makedirs(CheckDir)  # Creates a new dir for the given name<br>    print(“Directory created for “ + CheckDir)<br>、、、</p>
-<p>6、env_check.py 检查环境变量</p>
-<p>这个practice 我有点没懂意图，我搜索了一下，有说python其实没什么特殊变量仅仅需要将python放入path中确保后面可以调用。这个先放一下把，继续下一个。</p>
-<p>7、fileinfo.py 展示文件的元信息</p>
-<p>这个 practice 我理解 主要是考察 os.stat 的用法，通过这个module 可以直接查看file的一些信息。<br>、、、<br>import os<br>import stat  # index constants for os.stat()<br>import sys<br>import time</p>
-<p>def fileinfo(file_name):<br>    file_stats = os.stat(file_name)<br>    # create a dictionary to hold file info<br>    file_info = {<br>        ‘fname’: file_name,<br>        ‘fsize’: file_stats[stat.ST_SIZE],<br>        ‘f_lm’: time.strftime(“%d/%m/%Y %I:%M:%S %p”,<br>                              time.localtime(file_stats[stat.ST_MTIME])),<br>        ‘f_la’: time.strftime(“%d/%m/%Y %I:%M:%S %p”,<br>                              time.localtime(file_stats[stat.ST_ATIME])),<br>        ‘f_ct’: time.strftime(“%d/%m/%Y %I:%M:%S %p”,<br>                              time.localtime(file_stats[stat.ST_CTIME])),<br>        # ‘no_of_lines’: count,<br>        # ‘t_char’: t_char<br>    }<br>    # print out the file info<br>    file_info_keys = (‘file name’, ‘file size’, ‘last modified’, ‘last accessed’,<br>                      ‘creation time’, ‘Total number of lines are’,<br>                      ‘Total number of characters are’)<br>    file_info_vales = (file_info[‘fname’], str(file_info[‘fsize’]) + “ bytes”,<br>                       file_info[‘f_lm’], file_info[‘f_la’], file_info[‘f_ct’])</p>
-<pre><code>for f_key, f_value in zip(file_info_keys, file_info_vales):
-    print(f_key, &apos; =&apos;, f_value)</code></pre><p>fileinfo(‘vgsales.csv’)<br>、、、</p>
-<p>8、folder_size.py 统计当前当前文件夹的大小：</p>
-<p>这里主要考察的是 如何获取文件size 大小，然后在累加得出整个folder size 大小。其实获得文件size大小有两种方法：os.path.getsize(filepath) 或者 os.stat(filename).st_size。然后再通过处以1024的转换得到MB or GB，原本得到的file size 是以 KB为单位。<br>同时 os.walk 和 os.path.join 也是非常重要的module。</p>
-<p>import os<br>import sys</p>
-<p>def get_folder_size(start_path):<br>    total_size = 0<br>    for (path, dirs, files) in os.walk(start_path):  # Walk through all the directories. For each iteration, os.walk returns the folders, subfolders and files in the dir.<br>        for file in files:  # Get all the files<br>            filename = os.path.join(path, file)<br>            total_size += os.path.getsize(filename)<br>    return total_size</p>
-<p>但是我编写的上面这段代码，抓出来的folder size 大小和实际电脑前面看到的 有 1-3 MB 的差距。也不知道为什么。</p>
-<p>To be continue…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/12/Python-learning-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 

@@ -152,6 +152,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-learning-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/12/Python-learning-2/">Python - learning -2</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/12/Python-learning-2/" class="archive-article-date">
+  	<time datetime="2020-04-12T08:21:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天我们继续Python 的 学习。</p>
+<p>5.dir_test.py 检查目录 testdir 是否存在, 如果不存在则创建一个。<br>这个practice 有点和前面第二个相似，主要是考察 os.path 的用法。其中有两个重要的module分别是 os.path.exists 和 os.makedirs 后一个主要是生成新的目录。</p>
+<p>、、、<br>import os</p>
+<p>CheckDir = input(“Enter the name of the directory to check : “)<br>if os.path.exists(CheckDir):  # Checks if the dir exists<br>    print(“The directory exists”)<br>else:<br>    print(“No directory found for “ + CheckDir)  # Output if no directory<br>    os.makedirs(CheckDir)  # Creates a new dir for the given name<br>    print(“Directory created for “ + CheckDir)<br>、、、</p>
+<p>6、env_check.py 检查环境变量</p>
+<p>这个practice 我有点没懂意图，我搜索了一下，有说python其实没什么特殊变量仅仅需要将python放入path中确保后面可以调用。这个先放一下把，继续下一个。</p>
+<p>7、fileinfo.py 展示文件的元信息</p>
+<p>这个 practice 我理解 主要是考察 os.stat 的用法，通过这个module 可以直接查看file的一些信息。<br>、、、<br>import os<br>import stat  # index constants for os.stat()<br>import sys<br>import time</p>
+<p>def fileinfo(file_name):<br>    file_stats = os.stat(file_name)<br>    # create a dictionary to hold file info<br>    file_info = {<br>        ‘fname’: file_name,<br>        ‘fsize’: file_stats[stat.ST_SIZE],<br>        ‘f_lm’: time.strftime(“%d/%m/%Y %I:%M:%S %p”,<br>                              time.localtime(file_stats[stat.ST_MTIME])),<br>        ‘f_la’: time.strftime(“%d/%m/%Y %I:%M:%S %p”,<br>                              time.localtime(file_stats[stat.ST_ATIME])),<br>        ‘f_ct’: time.strftime(“%d/%m/%Y %I:%M:%S %p”,<br>                              time.localtime(file_stats[stat.ST_CTIME])),<br>        # ‘no_of_lines’: count,<br>        # ‘t_char’: t_char<br>    }<br>    # print out the file info<br>    file_info_keys = (‘file name’, ‘file size’, ‘last modified’, ‘last accessed’,<br>                      ‘creation time’, ‘Total number of lines are’,<br>                      ‘Total number of characters are’)<br>    file_info_vales = (file_info[‘fname’], str(file_info[‘fsize’]) + “ bytes”,<br>                       file_info[‘f_lm’], file_info[‘f_la’], file_info[‘f_ct’])</p>
+<pre><code>for f_key, f_value in zip(file_info_keys, file_info_vales):
+    print(f_key, &apos; =&apos;, f_value)</code></pre><p>fileinfo(‘vgsales.csv’)<br>、、、</p>
+<p>8、folder_size.py 统计当前当前文件夹的大小：</p>
+<p>这里主要考察的是 如何获取文件size 大小，然后在累加得出整个folder size 大小。其实获得文件size大小有两种方法：os.path.getsize(filepath) 或者 os.stat(filename).st_size。然后再通过处以1024的转换得到MB or GB，原本得到的file size 是以 KB为单位。<br>同时 os.walk 和 os.path.join 也是非常重要的module。</p>
+<p>import os<br>import sys</p>
+<p>def get_folder_size(start_path):<br>    total_size = 0<br>    for (path, dirs, files) in os.walk(start_path):  # Walk through all the directories. For each iteration, os.walk returns the folders, subfolders and files in the dir.<br>        for file in files:  # Get all the files<br>            filename = os.path.join(path, file)<br>            total_size += os.path.getsize(filename)<br>    return total_size</p>
+<p>但是我编写的上面这段代码，抓出来的folder size 大小和实际电脑前面看到的 有 1-3 MB 的差距。也不知道为什么。</p>
+<p>To be continue…</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/12/Python-learning-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python-learning-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -785,84 +864,9 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/15/hello-world/" class="archive-article-date">
-  	<time datetime="2019-12-15T11:01:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/15/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 
