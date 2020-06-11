@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 鱼先生的博客</title>
+  <title>Python 学习入门与实践 - 字典 | 鱼先生的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="鱼先生的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;page&#x2F;3&#x2F;index.html">
+  <meta name="description" content="一个简单的字典：alien_0&#x3D;{‘color’:’green’,’points’:5}print(alien_0[‘color’])print(alien_0[‘points’]) 使用字典：字典时一系列 键-值 对。与键相关联的可以是数字，字符串或列表，乃至字典。指定键时，python将返回与之相关联的值。键和值用冒号，键值对之间用逗号分隔。在字典中，你想存储多少个键值对都可以。 访问字典中的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 学习入门与实践 - 字典">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;07&#x2F;Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8&#x2F;index.html">
 <meta property="og:site_name" content="鱼先生的博客">
+<meta property="og:description" content="一个简单的字典：alien_0&#x3D;{‘color’:’green’,’points’:5}print(alien_0[‘color’])print(alien_0[‘points’]) 使用字典：字典时一系列 键-值 对。与键相关联的可以是数字，字符串或列表，乃至字典。指定键时，python将返回与之相关联的值。键和值用冒号，键值对之间用逗号分隔。在字典中，你想存储多少个键值对都可以。 访问字典中的">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-07T07:02:57.000Z">
+<meta property="article:modified_time" content="2020-06-11T11:58:57.988Z">
 <meta property="article:author" content="鱼先生">
 <meta name="twitter:card" content="summary">
   
@@ -150,106 +154,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python-学习入门与实践-字典" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python 学习入门与实践 - 字典
+    </h1>
+  
+
+        
+        <a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8/" class="archive-article-date">
+  	<time datetime="2020-06-07T07:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一个简单的字典：<br>alien_0={‘color’:’green’,’points’:5}<br>print(alien_0[‘color’])<br>print(alien_0[‘points’])</p>
+<p>使用字典：字典时一系列 键-值 对。与键相关联的可以是数字，字符串或列表，乃至字典。指定键时，python将返回与之相关联的值。键和值用冒号，键值对之间用逗号分隔。在字典中，你想存储多少个键值对都可以。</p>
+<p>访问字典中的值：new_points = alien_0[‘points’]<br>              print(‘You juest earned ‘ + str(new_points) + ‘ points!’)</p>
+<p>添加键值对： alien_0[‘x_position’] = 0<br>           alien_0[‘y_position’] = 25<br>屏幕坐标系原点通常为左上角，放在屏幕左边缘x设置为0，离屏幕顶部25像素的地方，可将y设置为25.</p>
+<p>先创建一个空字典：<br>alien_0 = {}<br>alien_0[‘color’] = ‘green’<br>alien_0[‘points’] = 5</p>
+<p>修改字典中的值： alien_0[‘color’] = ‘yellow’<br>x_increment = 1<br>alien_0[‘x_position’] = alien_0[‘x_position’] + x_increment</p>
+<p>删除键-值对：del alien_0[‘points’],删除的键-值对永远消失。</p>
+<p>由类似对象组成的字典：在最后一个键-值对下添加右花括号，在最后一个键-值对后面也加上逗号。</p>
+<p>遍历字典：for key,value in user_0.items():<br>            print(‘\nKey: ‘ + key)<br>            print(‘Value: ‘ + value )<br>Python 不关心键-值对的存储顺序，只跟踪键和值之间的关联关系。</p>
+<p>遍历字典中的所有键：for name in favourite_languages.keys() 遍历字典时，会默认遍历所有的键。因此：for name in favorite_languages 输出一样。</p>
+<p>按顺序遍历字典中的所有键：要以特定的顺序返回元素，一种办法时在for循环中返回的键进行排序，因此可以使用 sorted（）来获得。for name in sorted(favorite_languages.key())</p>
+<p>遍历字典中的所有值：可以使用方法values(): for language in favorite_languages.values():<br>如果要剔除值的重复项，可以使用集合set（）：for language in set(favorite_languages.values()):</p>
+<p>嵌套：<br>aliens=[]<br>for alien_number in range(30):<br>    new_alien = {‘color’:’green’,’points’:5,’speed’:’slow’}<br>    aliens.append(new_alien)</p>
+<p>在字典中存储列表： pizza = {<br> ‘crust’: ‘thick’,<br> ‘toppings’: [‘mushrooms’, ‘extra cheese’],<br> }<br> 每当需要在字典中将一个键关联到多个值时，可以在字典中嵌套一个列表。<br> for topping in pizza[‘toppings’]:<br>    print(‘\t’+ topping)</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/16/%E6%88%91%E7%9A%84%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF%E5%95%A6/" class="archive-article-date">
-  	<time datetime="2019-12-16T14:53:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/16/%E6%88%91%E7%9A%84%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%AD%A3%E5%BC%8F%E4%B8%8A%E7%BA%BF%E5%95%A6/">我的新博客正式上线啦</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/07/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/15/a/" class="archive-article-date">
-  	<time datetime="2019-12-15T15:00:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/31/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-if%E8%AF%AD%E5%8F%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python 学习入门与实践 - if语句</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/15/a/">a</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/15/hello-world/" class="archive-article-date">
-  	<time datetime="2019-12-15T11:01:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/15/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
   
 
 
@@ -273,8 +339,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -152,6 +152,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-学习入门与实践-字典" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8/">Python 学习入门与实践 - 字典</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8/" class="archive-article-date">
+  	<time datetime="2020-06-07T07:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一个简单的字典：<br>alien_0={‘color’:’green’,’points’:5}<br>print(alien_0[‘color’])<br>print(alien_0[‘points’])</p>
+<p>使用字典：字典时一系列 键-值 对。与键相关联的可以是数字，字符串或列表，乃至字典。指定键时，python将返回与之相关联的值。键和值用冒号，键值对之间用逗号分隔。在字典中，你想存储多少个键值对都可以。</p>
+<p>访问字典中的值：new_points = alien_0[‘points’]<br>              print(‘You juest earned ‘ + str(new_points) + ‘ points!’)</p>
+<p>添加键值对： alien_0[‘x_position’] = 0<br>           alien_0[‘y_position’] = 25<br>屏幕坐标系原点通常为左上角，放在屏幕左边缘x设置为0，离屏幕顶部25像素的地方，可将y设置为25.</p>
+<p>先创建一个空字典：<br>alien_0 = {}<br>alien_0[‘color’] = ‘green’<br>alien_0[‘points’] = 5</p>
+<p>修改字典中的值： alien_0[‘color’] = ‘yellow’<br>x_increment = 1<br>alien_0[‘x_position’] = alien_0[‘x_position’] + x_increment</p>
+<p>删除键-值对：del alien_0[‘points’],删除的键-值对永远消失。</p>
+<p>由类似对象组成的字典：在最后一个键-值对下添加右花括号，在最后一个键-值对后面也加上逗号。</p>
+<p>遍历字典：for key,value in user_0.items():<br>            print(‘\nKey: ‘ + key)<br>            print(‘Value: ‘ + value )<br>Python 不关心键-值对的存储顺序，只跟踪键和值之间的关联关系。</p>
+<p>遍历字典中的所有键：for name in favourite_languages.keys() 遍历字典时，会默认遍历所有的键。因此：for name in favorite_languages 输出一样。</p>
+<p>按顺序遍历字典中的所有键：要以特定的顺序返回元素，一种办法时在for循环中返回的键进行排序，因此可以使用 sorted（）来获得。for name in sorted(favorite_languages.key())</p>
+<p>遍历字典中的所有值：可以使用方法values(): for language in favorite_languages.values():<br>如果要剔除值的重复项，可以使用集合set（）：for language in set(favorite_languages.values()):</p>
+<p>嵌套：<br>aliens=[]<br>for alien_number in range(30):<br>    new_alien = {‘color’:’green’,’points’:5,’speed’:’slow’}<br>    aliens.append(new_alien)</p>
+<p>在字典中存储列表： pizza = {<br> ‘crust’: ‘thick’,<br> ‘toppings’: [‘mushrooms’, ‘extra cheese’],<br> }<br> 每当需要在字典中将一个键关联到多个值时，可以在字典中嵌套一个列表。<br> for topping in pizza[‘toppings’]:<br>    print(‘\t’+ topping)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python-学习入门与实践-if语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -835,83 +911,6 @@ else:
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/04/19/%E7%A9%BA%E8%99%9A%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%BA%BA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-learning-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/13/Python-learning-3/">Python - learning -3</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/13/Python-learning-3/" class="archive-article-date">
-  	<time datetime="2020-04-13T15:36:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天我们继续学习Python。</p>
-<p>9、logs.py 搜索指定目录下所有*.log文件，并压缩以日期格式转储。</p>
-<p>在做这个practice之前，我先花半小时的时间了解 log 文件是什么，干什么用的，然后python如何生成log 文件等。 </p>
-<p>import logging</p>
-<p>LOG_FORMAT = “%(asctime)s - %(levelname)s - %(message)s”<br>logging.basicConfig(filename=’my.log’, level=logging.DEBUG, format=LOG_FORMAT)<br>logging.log(logging.DEBUG, “This is a debug log.”)<br>logging.log(logging.INFO, “This is a info log.”)<br>logging.log(logging.WARNING, “This is a warning log.”)<br>logging.log(logging.ERROR, “This is a error log.”)<br>logging.log(logging.CRITICAL, “This is a critical log.”)</p>
-<p>log 文件是在给实际程序运行时，记录一些重要报错信息，然后程序员可以根据log file提供的信息修正程序，大批量时候甚至可以分析用户的行为。</p>
-<p>弄清楚logfile 之后，开始看这个代码怎么写。首先，使用os.listdir把对应文件中文件提取，然后使用files.endswith 抓出相应结尾的文件如果.log，最后使用zipfile 将对应文件zip起来：</p>
-<p>import os  # Load the Library Module<br>import zipfile</p>
-<p>zip = zipfile.ZipFile(‘log.zip’,’w’)<br>logsdir = “/Users/Yu/Desktop”  # Set the Variable logsdir</p>
-<p>for files in os.listdir(logsdir):  # Find all the files in the directory<br>    if files.endswith(“.log”):  # Check to ensure the files in the directory end in .log<br>        zip.write(files)</p>
-<p>10、move_files_over_x_days.py 移动所有满足指定时间日期的文件从源目录到目标文件。</p>
-<p>import os<br>import shutil<br>import time</p>
-<p>dst = ‘/Users/Yu/Desktop/Move_files’<br>src =’/Users/Yu/Desktop’<br>now = time.time()<br>days = 365<br>if not os.path.exists(dst):<br>    os.mkdir(dst)</p>
-<p>for f in os.listdir(src):  # Loop through all the files in the source directory<br>    if os.stat(f).st_mtime &lt; now - days * 86400:  # Work out how old they are, if they are older than 365 days old<br>        if os.path.isfile(f):  # Check it’s a file<br>            shutil.move(f, dst)  # Move the files<br>上述代码考察了 shutil, time 的使用。先用 listdir找出所有文件，然后filter 出上次修改时间大于xx天的文件，os.stat(f).st_mtime,然后用 shutil.move移动相应文件。</p>
-<p>To be continue…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/13/Python-learning-3/">展开全文 >></a>
         </p>
       
 
