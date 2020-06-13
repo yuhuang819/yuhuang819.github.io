@@ -180,12 +180,15 @@
 <p>修改字典中的值： alien_0[‘color’] = ‘yellow’<br>x_increment = 1<br>alien_0[‘x_position’] = alien_0[‘x_position’] + x_increment</p>
 <p>删除键-值对：del alien_0[‘points’],删除的键-值对永远消失。</p>
 <p>由类似对象组成的字典：在最后一个键-值对下添加右花括号，在最后一个键-值对后面也加上逗号。</p>
-<p>遍历字典：for key,value in user_0.items():<br>            print(‘\nKey: ‘ + key)<br>            print(‘Value: ‘ + value )<br>Python 不关心键-值对的存储顺序，只跟踪键和值之间的关联关系。</p>
+<p>遍历字典：for key,value in user_0.items():<br>            print(‘\nKey: ‘ + key)<br>            print(‘Value: ‘ + value )<br>Python 不关心键-值对的存储顺序，只跟踪键和值之间的关联关系。for语句的第二部分包含字典名和方法items(),它返回键值对列表。</p>
 <p>遍历字典中的所有键：for name in favourite_languages.keys() 遍历字典时，会默认遍历所有的键。因此：for name in favorite_languages 输出一样。</p>
 <p>按顺序遍历字典中的所有键：要以特定的顺序返回元素，一种办法时在for循环中返回的键进行排序，因此可以使用 sorted（）来获得。for name in sorted(favorite_languages.key())</p>
 <p>遍历字典中的所有值：可以使用方法values(): for language in favorite_languages.values():<br>如果要剔除值的重复项，可以使用集合set（）：for language in set(favorite_languages.values()):</p>
 <p>嵌套：<br>aliens=[]<br>for alien_number in range(30):<br>    new_alien = {‘color’:’green’,’points’:5,’speed’:’slow’}<br>    aliens.append(new_alien)</p>
 <p>在字典中存储列表： pizza = {<br> ‘crust’: ‘thick’,<br> ‘toppings’: [‘mushrooms’, ‘extra cheese’],<br> }<br> 每当需要在字典中将一个键关联到多个值时，可以在字典中嵌套一个列表。<br> for topping in pizza[‘toppings’]:<br>    print(‘\t’+ topping)</p>
+<p>for name,languages in favourite_languages.items():<br>    print(‘\n’ + name.title() + “‘s favorite languages are:’ “)<br>    for language in languages:<br>        print(…)</p>
+<p>在字典中存储字典：</p>
+<p>users = {<br> ‘aeinstein’: {<br> ‘first’: ‘albert’,<br> ‘last’: ‘einstein’,<br> ‘location’: ‘princeton’,<br> },<br> ‘mcurie’: {<br> ‘first’: ‘marie’,<br> ‘last’: ‘curie’,<br> ‘location’: ‘paris’,<br> },<br> } </p>
 
       
 
