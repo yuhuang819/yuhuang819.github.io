@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/6 | 鱼先生的博客</title>
+  <title>Python 学习入门与实践 - 函数 | 鱼先生的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="鱼先生的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2020&#x2F;06&#x2F;index.html">
+  <meta name="description" content="定义函数 def greet_user():    print(‘Hello!’)greet_user() 向函数传递信息 def greet_user(username):    print(‘Hello! ‘ + username.title()+’!’)greet_user(‘jesse’) 实参和形参 传递实参。位置实参。调用函数多次：位置实参的顺序很重要，关键字实参，关键字实参无需考虑函">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 学习入门与实践 - 函数">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;25&#x2F;Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0&#x2F;index.html">
 <meta property="og:site_name" content="鱼先生的博客">
+<meta property="og:description" content="定义函数 def greet_user():    print(‘Hello!’)greet_user() 向函数传递信息 def greet_user(username):    print(‘Hello! ‘ + username.title()+’!’)greet_user(‘jesse’) 实参和形参 传递实参。位置实参。调用函数多次：位置实参的顺序很重要，关键字实参，关键字实参无需考虑函">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-25T09:46:10.000Z">
+<meta property="article:modified_time" content="2020-07-09T14:14:49.041Z">
 <meta property="article:author" content="鱼先生">
 <meta name="twitter:card" content="summary">
   
@@ -150,103 +154,216 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Python-学习入门与实践-函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Python 学习入门与实践 - 函数
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/" class="archive-article-date">
+
+        
+        <a href="/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/" class="archive-article-date">
   	<time datetime="2020-06-25T09:46:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/">Python 学习入门与实践 - 函数</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>定义函数</p>
+<p>def greet_user():<br>    print(‘Hello!’)<br>greet_user()</p>
+<p>向函数传递信息</p>
+<p>def greet_user(username):<br>    print(‘Hello! ‘ + username.title()+’!’)<br>greet_user(‘jesse’)</p>
+<p>实参和形参</p>
+<p>传递实参。位置实参。<br>调用函数多次：<br>位置实参的顺序很重要，<br>关键字实参，关键字实参无需考虑函数调用的实参顺序： describe_pet(animal_type=’hamster’,pet_name=’harry’)</p>
+<p>使用关键字实参时，务必准确地指定函数定义中的形参名。<br>默认值：<br>如果你发现调用函数描述的大都是小狗，可以将形参animal_type默认设置为 ‘dog’。<br>def describe_pet(pet_name, animal_type=’dog’):<br>    print(“\nI have a “ + animal_type + “.”)<br>    print(“My “ + animal_type + “‘s name is “ + pet_name.title() + “.”)</p>
+<p>describe_pet(pet_name=’willie’)</p>
+<p>请注意，这个函数的定义，修改了形参的排列顺序。由于给animal_type指定了默认值，无需通过实参来指定动物类型，然而python依然将这个实参视为位置实参。</p>
+<p>如果描述的动物不是狗，可以：<br>describe_pet(pet_name=’harry’, animal_type=’hamster’)</p>
+<p>等效的函数调用：可以使用位置方式，也可以使用关键字方式。<br>describe_pet(‘willie’)<br>describe_pet(pet_name=’willie’)</p>
+<p>避免实参错误：</p>
+<p>返回值：函数返回的值被称为返回值。在函数中，可以使用 return 语句将值返回到调用函数的代码行。返回值能够将程序的大部分繁重工作移到函数中去完成。</p>
+<p>def get_formatted_name(first_name, last_name):<br>    “””返回整洁的姓名”””<br>    full_name = first_name + ‘ ‘ + last_name<br>    return full_name.title() </p>
+<p>musician = get_formatted_name(‘jimi’,<br>print(musician)</p>
+<p>调用函数返回值时，需要提供一个变量，用于存储返回的值。这里，将返回值存储在变量musician中。</p>
+<p>让实参变成可选的：<br>有时候，需要让实参变成可选的，这样使用函数的人就只需要在必要时才提供额外信息。<br>成类似于下面这样：<br>def get_formatted_name(first_name, middle_name, last_name):<br>    “””返回整洁的姓名”””<br>    full_name = first_name + ‘ ‘ + middle_name + ‘ ‘ + last_name<br>    return full_name.title() </p>
+<p>为让中间名变成可选的，可给实参middle_name指定一个默认值 –空字符串，并在用户没有提供中间名时不使用这个实参。同时，可以将middle_name移动到形参列表末尾。</p>
+<p>def get_formatted_name(first_name, last_name, middle_name=’’):<br>    if middle_name:<br>        full_name = first_name + ‘ ‘ + middle_name + ‘ ‘ + last_name <br>    else:<br>        full_name = first_name + ‘ ‘ + last_name<br>    return full_name.title()</p>
+<p>返回字典：<br>def build_person(first_name, last_name):<br>    person = {‘first’: first_name, ‘last’: last_name}<br>    return person </p>
+<p>musician = build_person(‘jimi’, ‘hendrix’) <br>print(musician)</p>
+<p>def build_person(first_name, last_name, age=’’):<br>    person = {‘first’: first_name, ‘last’: last_name}<br>    if age:<br>        person[‘age’] = age<br>    return person<br>    musician = build_person(‘jimi’, ‘hendrix’, age=27)<br>在Python中 None,  False, 空字符串””, 0, 空列表[], 空字典{}, 空元组()都相当于False</p>
+<p>结合使用函数和 while 循环：</p>
+<p>def get_formatted_name(first_name, last_name):<br>“””返回整洁的姓名”””<br>full_name = first_name + ‘ ‘ + last_name<br>return full_name.title() </p>
+<h1 id="这是一个无限循环"><a href="#这是一个无限循环" class="headerlink" title="这是一个无限循环!"></a>这是一个无限循环!</h1><p>while True:<br>     print(“\nPlease tell me your name:”)<br>     f_name = input(“First name: “)<br>     l_name = input(“Last name: “)<br>     formatted_name = get_formatted_name(f_name, l_name)<br>     print(“\nHello, “ + formatted_name + “!”)<br>每次提示用户输入时，都应该提供退出途径。每次提示用户输入时，都使用break语句。</p>
+<p>while True:<br>    print(“\nPlease tell me your name:”)<br>    print(“(enter ‘q’ at any time to quit)”)<br>    f_name = input(“First name: “)<br>    if f_name == ‘q’:<br>        break<br>    l_name = input(“Last name: “)<br>    if l_name == ‘q’:<br>        break<br>    formatted_name = get_formatted_name(f_name, l_name)<br>    print(“\nHello, “ + formatted_name + “!”)</p>
+<p>传递列表：<br>def greet_users(names):<br>    “””向列表中的每位用户都发出简单的问候”””<br>    for name in names:<br>    msg = “Hello, “ + name.title() + “!”<br>    print(msg) <br>usernames = [‘hannah’, ‘ty’, ‘margot’]<br>greet_users(usernames)</p>
+<p>在函数中修改列表：</p>
+<h1 id="首先创建一个列表，其中包含一些要打印的设计"><a href="#首先创建一个列表，其中包含一些要打印的设计" class="headerlink" title="首先创建一个列表，其中包含一些要打印的设计"></a>首先创建一个列表，其中包含一些要打印的设计</h1><p>unprinted_designs = [‘iphone case’, ‘robot pendant’, ‘dodecahedron’] completed_models = [] </p>
+<h1 id="模拟打印每个设计，直到没有未打印的设计为止-打印每个设计后，都将其移到列表completed-models中"><a href="#模拟打印每个设计，直到没有未打印的设计为止-打印每个设计后，都将其移到列表completed-models中" class="headerlink" title="模拟打印每个设计，直到没有未打印的设计为止 # 打印每个设计后，都将其移到列表completed_models中"></a>模拟打印每个设计，直到没有未打印的设计为止 # 打印每个设计后，都将其移到列表completed_models中</h1><p>while unprinted_designs:<br>    current_design = unprinted_designs.pop()<br>    #模拟根据设计制作3D打印模型的过程<br>    print(“Printing model: “ + current_design)<br>    completed_models.append(current_design) </p>
+<h1 id="显示打印好的所有模型"><a href="#显示打印好的所有模型" class="headerlink" title="显示打印好的所有模型"></a>显示打印好的所有模型</h1><p>print(“\nThe following models have been printed:”)<br>for completed_model in completed_models:<br>    print(completed_model)</p>
+<p>我们可以编写两个函数重新组织这些代码。第一个函数负责处理打印设计的工作。第二个描述打印了哪些设计：</p>
+<p>def print_models(unprinted_designs, completed_models):<br>    “”” 模拟打印每个设计，直到没有未打印的设计为止 打印每个设计后，都将其移到列表completed_models中 “””<br>    while unprinted_designs:<br>        current_design = unprinted_designs.pop()<br>        # 模拟根据设计制作3D打印模型的过程<br>        print(“Printing model: “ + current_design)<br>        completed_models.append(current_design)</p>
+<p>def show_completed_models(completed_models):<br>    “””显示打印好的所有模型”””<br>    print(“\nThe following models have been printed:”)<br>    for completed_model in completed_models:<br>        print(completed_model) </p>
+<p>unprinted_designs = [‘iphone case’, ‘robot pendant’, ‘dodecahedron’] completed_models = [] </p>
+<p>print_models(unprinted_designs, completed_models)<br>show_completed_models(completed_models)</p>
+<p>理念：每个函数都应只负责一项具体工作。编写函数时，如果你发现它执行的任务太多，可以尝试将代码划分到两个函数中。可以在一个函数中调用另一个函数。</p>
+<p>禁止函数修改列表：<br>可向函数传递列表的副本而不是原件。这样函数所做的任何修改都只影响副本，丝毫不影响原件。<br>要将列表的副本传递给函数，可以这样：<br>    funtion_name(list_name[:])</p>
+<p>切片表示法[:]创建列表的副本。在，如果不想清空列表可以这样调用函数：<br>print_models(unprinted_designs[:],completed_models)<br>这样函数使用的是列表unprinted_designs的副本，而不是列表本身。<br>除非用充分理由要传递副本，否则还是应该将原始列表传递给函数。因为让函数使用现成列表可以避免花时间和内存创建副本，提高效率。</p>
+<p>练习：</p>
+<p>magician = [‘Jack’,’Kobe’,’Michael’]</p>
+<p>def show_magicians(list):<br>    for name in list:<br>        print(name)</p>
+<p>def make_great(list):<br>    for num in range(len(list)):<br>        list[num] = ‘the Great ‘ + list[num].title()<br>        print(list[num])</p>
+<p>make_great(magician[:])<br>show_magicians(magician)</p>
+<p>传递任意数量的实参：<br>python 允许函数从调用语句中收集任意数量的实参。<br>def make_pizza(<em>toppings):<br>    …<br>形参名</em>toppings中的星号让python创建一个名为toppings的空元组，将所有值都封装到这个元组中。</p>
+<p>def make_pizza(*toppings):<br>    “””概述要制作的比萨”””<br>    print(“\nMaking a pizza with the following toppings:”)<br>    for topping in toppings:<br>        print(“- “ + topping)<br>make_pizza(‘pepperoni’)<br>make_pizza(‘mushrooms’, ‘green peppers’, ‘extra cheese’)</p>
+<p>结合使用位置实参和任意数量实参：<br>python 先匹配位置实参和关键字实参，再将余下的实参都收集到最后一个形参中。<br>python 将收到的第一个值存储在形参size中，并将其他的所有值都存储在元组 toppings中。</p>
+<p>def make_pizza(size, *toppings):<br>    “””概述要制作的比萨”””<br>    print(“\nMaking a “ + str(size) + “-inch pizza with the following toppings:”)<br>    for topping in toppings:<br>        print(“- “ + topping)<br>make_pizza(16, ‘pepperoni’)<br>make_pizza(12, ‘mushrooms’, ‘green peppers’, ‘extra cheese’)</p>
+<p>使用任意数量的关键字实参：<br>有时候，需要接受任意数量的实参，但预先不知道传递给函数的会是什么信息。可将函数编写成能够接受任意数量的键-值对。<br>def build_profile(first, last, **user_info):<br>    “””创建一个字典，其中包含我们知道的有关用户的一切”””<br>    profile = {}<br>    profile[‘first_name’] = first<br>    profile[‘last_name’] = last<br>    for key, value in user_info.items():<br>        profile[key] = value<br>    return profile</p>
+<p>user_profile = build_profile(‘albert’, ‘einstein’, location=’princeton’, field=’physics’) #user_info[‘location’] = ‘princeton’,user_info[‘field’] = ‘physics’<br>print(user_profile)</p>
+<p>形参**user_info 中的两个星号让python创建一个空字典。并将收到所有名称-值对都封装到这个字典中。在这个函数中，可以像访问字典一样访问user_info。</p>
+<p>将函数存储在模块中<br>import 语句允许在当前运行的程序文件使用模块中的代码<br>模块是拓展名为.py的文件。<br>在pizza.py 所在的目录中创建另一个文件。<br>import pizza<br>…<br>import 让python 打开 .py文件，将代码复制到这个程序中，你看不到复制的代码，python在幕后复制。<br>要调用被导入的模块中的函数，可指定导入的模块的名称pizza 和 函数 make_pizza()，并用句点分隔它们。<br>module_name.function_name()</p>
+<p>导入特定的函数：<br>带入语法： from module_name import funcation_0,function_1,function_2<br>如果只想导入使用函数：<br>from pizza import make_pizza 若使用这种方法，调用函数无需使用句点。</p>
+<p>使用 as 给函数指定别名：<br>from pizza import make_pizza as mp<br>通用语法：<br>from module_name import function_name as fn</p>
+<p>使用 as 给模块指定别名：<br>import pizza as p<br>通用语法：import module_name as mn</p>
+<p>导入模块中的所有函数：<br>使用星号（*)运算符可以让python导入模块中的所有函数：<br>from pizza import *：<br>import语句中的星号让python 将模块pizza 中的每一个函数都复制到这个程序文件中。<br>然而使用并非自己编写的大型模块时，最好不要采用这种导入方法，如果模块中有函数的名称与你项目中使用的名称相同，可能导致意想不到的结果：python可能遇到多个名称相同的函数或变量，进而覆盖函数，而不是分别导入函数。</p>
+<p>最佳做法是，要么只导入你需要使用的函数，要么导入整个模块并使用句点表示法。</p>
+<p>函数编写指南：<br>给函数指定描述性名称，只在其中使用小写字母和下划线。描述名称可帮助你和别人明白代码想要做什么。给模块命名时也应遵循上述约定。<br>给形参指定默认值时，等号两边不要有空格：<br>def function_name(parameter_0, parameter_1=’default value’)<br>对于函数调用中的关键实参，也应该遵循这种约定：<br>fuction_name(value_0, parameter_1=’value’)</p>
+<p>建议代码行的长度不要超过79字符。</p>
+<p>大多数编辑器都会自动对齐后续参数列表行，使其缩进程度与你给一个参数列表行指定的缩进程度相同：<br>def function_name(<br>    parameter_0,<br>    parameter_1,<br>    parameter_2<br>    )</p>
+<p>所有的 import 语句都应该放在文件开头，唯一例外的情形是，在文件开头使用了注释来描述整个程序。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/13/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-While/" class="archive-article-date">
-  	<time datetime="2020-06-13T02:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/13/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-While/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python 学习入门与实践 - While</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/13/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-While/">Python 学习入门与实践 - While</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8/" class="archive-article-date">
-  	<time datetime="2020-06-07T07:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8/">Python 学习入门与实践 - 字典</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +386,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

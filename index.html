@@ -152,6 +152,129 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-学习入门与实践-函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/">Python 学习入门与实践 - 函数</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2020-06-25T09:46:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>定义函数</p>
+<p>def greet_user():<br>    print(‘Hello!’)<br>greet_user()</p>
+<p>向函数传递信息</p>
+<p>def greet_user(username):<br>    print(‘Hello! ‘ + username.title()+’!’)<br>greet_user(‘jesse’)</p>
+<p>实参和形参</p>
+<p>传递实参。位置实参。<br>调用函数多次：<br>位置实参的顺序很重要，<br>关键字实参，关键字实参无需考虑函数调用的实参顺序： describe_pet(animal_type=’hamster’,pet_name=’harry’)</p>
+<p>使用关键字实参时，务必准确地指定函数定义中的形参名。<br>默认值：<br>如果你发现调用函数描述的大都是小狗，可以将形参animal_type默认设置为 ‘dog’。<br>def describe_pet(pet_name, animal_type=’dog’):<br>    print(“\nI have a “ + animal_type + “.”)<br>    print(“My “ + animal_type + “‘s name is “ + pet_name.title() + “.”)</p>
+<p>describe_pet(pet_name=’willie’)</p>
+<p>请注意，这个函数的定义，修改了形参的排列顺序。由于给animal_type指定了默认值，无需通过实参来指定动物类型，然而python依然将这个实参视为位置实参。</p>
+<p>如果描述的动物不是狗，可以：<br>describe_pet(pet_name=’harry’, animal_type=’hamster’)</p>
+<p>等效的函数调用：可以使用位置方式，也可以使用关键字方式。<br>describe_pet(‘willie’)<br>describe_pet(pet_name=’willie’)</p>
+<p>避免实参错误：</p>
+<p>返回值：函数返回的值被称为返回值。在函数中，可以使用 return 语句将值返回到调用函数的代码行。返回值能够将程序的大部分繁重工作移到函数中去完成。</p>
+<p>def get_formatted_name(first_name, last_name):<br>    “””返回整洁的姓名”””<br>    full_name = first_name + ‘ ‘ + last_name<br>    return full_name.title() </p>
+<p>musician = get_formatted_name(‘jimi’,<br>print(musician)</p>
+<p>调用函数返回值时，需要提供一个变量，用于存储返回的值。这里，将返回值存储在变量musician中。</p>
+<p>让实参变成可选的：<br>有时候，需要让实参变成可选的，这样使用函数的人就只需要在必要时才提供额外信息。<br>成类似于下面这样：<br>def get_formatted_name(first_name, middle_name, last_name):<br>    “””返回整洁的姓名”””<br>    full_name = first_name + ‘ ‘ + middle_name + ‘ ‘ + last_name<br>    return full_name.title() </p>
+<p>为让中间名变成可选的，可给实参middle_name指定一个默认值 –空字符串，并在用户没有提供中间名时不使用这个实参。同时，可以将middle_name移动到形参列表末尾。</p>
+<p>def get_formatted_name(first_name, last_name, middle_name=’’):<br>    if middle_name:<br>        full_name = first_name + ‘ ‘ + middle_name + ‘ ‘ + last_name <br>    else:<br>        full_name = first_name + ‘ ‘ + last_name<br>    return full_name.title()</p>
+<p>返回字典：<br>def build_person(first_name, last_name):<br>    person = {‘first’: first_name, ‘last’: last_name}<br>    return person </p>
+<p>musician = build_person(‘jimi’, ‘hendrix’) <br>print(musician)</p>
+<p>def build_person(first_name, last_name, age=’’):<br>    person = {‘first’: first_name, ‘last’: last_name}<br>    if age:<br>        person[‘age’] = age<br>    return person<br>    musician = build_person(‘jimi’, ‘hendrix’, age=27)<br>在Python中 None,  False, 空字符串””, 0, 空列表[], 空字典{}, 空元组()都相当于False</p>
+<p>结合使用函数和 while 循环：</p>
+<p>def get_formatted_name(first_name, last_name):<br>“””返回整洁的姓名”””<br>full_name = first_name + ‘ ‘ + last_name<br>return full_name.title() </p>
+<h1 id="这是一个无限循环"><a href="#这是一个无限循环" class="headerlink" title="这是一个无限循环!"></a>这是一个无限循环!</h1><p>while True:<br>     print(“\nPlease tell me your name:”)<br>     f_name = input(“First name: “)<br>     l_name = input(“Last name: “)<br>     formatted_name = get_formatted_name(f_name, l_name)<br>     print(“\nHello, “ + formatted_name + “!”)<br>每次提示用户输入时，都应该提供退出途径。每次提示用户输入时，都使用break语句。</p>
+<p>while True:<br>    print(“\nPlease tell me your name:”)<br>    print(“(enter ‘q’ at any time to quit)”)<br>    f_name = input(“First name: “)<br>    if f_name == ‘q’:<br>        break<br>    l_name = input(“Last name: “)<br>    if l_name == ‘q’:<br>        break<br>    formatted_name = get_formatted_name(f_name, l_name)<br>    print(“\nHello, “ + formatted_name + “!”)</p>
+<p>传递列表：<br>def greet_users(names):<br>    “””向列表中的每位用户都发出简单的问候”””<br>    for name in names:<br>    msg = “Hello, “ + name.title() + “!”<br>    print(msg) <br>usernames = [‘hannah’, ‘ty’, ‘margot’]<br>greet_users(usernames)</p>
+<p>在函数中修改列表：</p>
+<h1 id="首先创建一个列表，其中包含一些要打印的设计"><a href="#首先创建一个列表，其中包含一些要打印的设计" class="headerlink" title="首先创建一个列表，其中包含一些要打印的设计"></a>首先创建一个列表，其中包含一些要打印的设计</h1><p>unprinted_designs = [‘iphone case’, ‘robot pendant’, ‘dodecahedron’] completed_models = [] </p>
+<h1 id="模拟打印每个设计，直到没有未打印的设计为止-打印每个设计后，都将其移到列表completed-models中"><a href="#模拟打印每个设计，直到没有未打印的设计为止-打印每个设计后，都将其移到列表completed-models中" class="headerlink" title="模拟打印每个设计，直到没有未打印的设计为止 # 打印每个设计后，都将其移到列表completed_models中"></a>模拟打印每个设计，直到没有未打印的设计为止 # 打印每个设计后，都将其移到列表completed_models中</h1><p>while unprinted_designs:<br>    current_design = unprinted_designs.pop()<br>    #模拟根据设计制作3D打印模型的过程<br>    print(“Printing model: “ + current_design)<br>    completed_models.append(current_design) </p>
+<h1 id="显示打印好的所有模型"><a href="#显示打印好的所有模型" class="headerlink" title="显示打印好的所有模型"></a>显示打印好的所有模型</h1><p>print(“\nThe following models have been printed:”)<br>for completed_model in completed_models:<br>    print(completed_model)</p>
+<p>我们可以编写两个函数重新组织这些代码。第一个函数负责处理打印设计的工作。第二个描述打印了哪些设计：</p>
+<p>def print_models(unprinted_designs, completed_models):<br>    “”” 模拟打印每个设计，直到没有未打印的设计为止 打印每个设计后，都将其移到列表completed_models中 “””<br>    while unprinted_designs:<br>        current_design = unprinted_designs.pop()<br>        # 模拟根据设计制作3D打印模型的过程<br>        print(“Printing model: “ + current_design)<br>        completed_models.append(current_design)</p>
+<p>def show_completed_models(completed_models):<br>    “””显示打印好的所有模型”””<br>    print(“\nThe following models have been printed:”)<br>    for completed_model in completed_models:<br>        print(completed_model) </p>
+<p>unprinted_designs = [‘iphone case’, ‘robot pendant’, ‘dodecahedron’] completed_models = [] </p>
+<p>print_models(unprinted_designs, completed_models)<br>show_completed_models(completed_models)</p>
+<p>理念：每个函数都应只负责一项具体工作。编写函数时，如果你发现它执行的任务太多，可以尝试将代码划分到两个函数中。可以在一个函数中调用另一个函数。</p>
+<p>禁止函数修改列表：<br>可向函数传递列表的副本而不是原件。这样函数所做的任何修改都只影响副本，丝毫不影响原件。<br>要将列表的副本传递给函数，可以这样：<br>    funtion_name(list_name[:])</p>
+<p>切片表示法[:]创建列表的副本。在，如果不想清空列表可以这样调用函数：<br>print_models(unprinted_designs[:],completed_models)<br>这样函数使用的是列表unprinted_designs的副本，而不是列表本身。<br>除非用充分理由要传递副本，否则还是应该将原始列表传递给函数。因为让函数使用现成列表可以避免花时间和内存创建副本，提高效率。</p>
+<p>练习：</p>
+<p>magician = [‘Jack’,’Kobe’,’Michael’]</p>
+<p>def show_magicians(list):<br>    for name in list:<br>        print(name)</p>
+<p>def make_great(list):<br>    for num in range(len(list)):<br>        list[num] = ‘the Great ‘ + list[num].title()<br>        print(list[num])</p>
+<p>make_great(magician[:])<br>show_magicians(magician)</p>
+<p>传递任意数量的实参：<br>python 允许函数从调用语句中收集任意数量的实参。<br>def make_pizza(<em>toppings):<br>    …<br>形参名</em>toppings中的星号让python创建一个名为toppings的空元组，将所有值都封装到这个元组中。</p>
+<p>def make_pizza(*toppings):<br>    “””概述要制作的比萨”””<br>    print(“\nMaking a pizza with the following toppings:”)<br>    for topping in toppings:<br>        print(“- “ + topping)<br>make_pizza(‘pepperoni’)<br>make_pizza(‘mushrooms’, ‘green peppers’, ‘extra cheese’)</p>
+<p>结合使用位置实参和任意数量实参：<br>python 先匹配位置实参和关键字实参，再将余下的实参都收集到最后一个形参中。<br>python 将收到的第一个值存储在形参size中，并将其他的所有值都存储在元组 toppings中。</p>
+<p>def make_pizza(size, *toppings):<br>    “””概述要制作的比萨”””<br>    print(“\nMaking a “ + str(size) + “-inch pizza with the following toppings:”)<br>    for topping in toppings:<br>        print(“- “ + topping)<br>make_pizza(16, ‘pepperoni’)<br>make_pizza(12, ‘mushrooms’, ‘green peppers’, ‘extra cheese’)</p>
+<p>使用任意数量的关键字实参：<br>有时候，需要接受任意数量的实参，但预先不知道传递给函数的会是什么信息。可将函数编写成能够接受任意数量的键-值对。<br>def build_profile(first, last, **user_info):<br>    “””创建一个字典，其中包含我们知道的有关用户的一切”””<br>    profile = {}<br>    profile[‘first_name’] = first<br>    profile[‘last_name’] = last<br>    for key, value in user_info.items():<br>        profile[key] = value<br>    return profile</p>
+<p>user_profile = build_profile(‘albert’, ‘einstein’, location=’princeton’, field=’physics’) #user_info[‘location’] = ‘princeton’,user_info[‘field’] = ‘physics’<br>print(user_profile)</p>
+<p>形参**user_info 中的两个星号让python创建一个空字典。并将收到所有名称-值对都封装到这个字典中。在这个函数中，可以像访问字典一样访问user_info。</p>
+<p>将函数存储在模块中<br>import 语句允许在当前运行的程序文件使用模块中的代码<br>模块是拓展名为.py的文件。<br>在pizza.py 所在的目录中创建另一个文件。<br>import pizza<br>…<br>import 让python 打开 .py文件，将代码复制到这个程序中，你看不到复制的代码，python在幕后复制。<br>要调用被导入的模块中的函数，可指定导入的模块的名称pizza 和 函数 make_pizza()，并用句点分隔它们。<br>module_name.function_name()</p>
+<p>导入特定的函数：<br>带入语法： from module_name import funcation_0,function_1,function_2<br>如果只想导入使用函数：<br>from pizza import make_pizza 若使用这种方法，调用函数无需使用句点。</p>
+<p>使用 as 给函数指定别名：<br>from pizza import make_pizza as mp<br>通用语法：<br>from module_name import function_name as fn</p>
+<p>使用 as 给模块指定别名：<br>import pizza as p<br>通用语法：import module_name as mn</p>
+<p>导入模块中的所有函数：<br>使用星号（*)运算符可以让python导入模块中的所有函数：<br>from pizza import *：<br>import语句中的星号让python 将模块pizza 中的每一个函数都复制到这个程序文件中。<br>然而使用并非自己编写的大型模块时，最好不要采用这种导入方法，如果模块中有函数的名称与你项目中使用的名称相同，可能导致意想不到的结果：python可能遇到多个名称相同的函数或变量，进而覆盖函数，而不是分别导入函数。</p>
+<p>最佳做法是，要么只导入你需要使用的函数，要么导入整个模块并使用句点表示法。</p>
+<p>函数编写指南：<br>给函数指定描述性名称，只在其中使用小写字母和下划线。描述名称可帮助你和别人明白代码想要做什么。给模块命名时也应遵循上述约定。<br>给形参指定默认值时，等号两边不要有空格：<br>def function_name(parameter_0, parameter_1=’default value’)<br>对于函数调用中的关键实参，也应该遵循这种约定：<br>fuction_name(value_0, parameter_1=’value’)</p>
+<p>建议代码行的长度不要超过79字符。</p>
+<p>大多数编辑器都会自动对齐后续参数列表行，使其缩进程度与你给一个参数列表行指定的缩进程度相同：<br>def function_name(<br>    parameter_0,<br>    parameter_1,<br>    parameter_2<br>    )</p>
+<p>所有的 import 语句都应该放在文件开头，唯一例外的情形是，在文件开头使用了注释来描述整个程序。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python-学习入门与实践-While" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -822,117 +945,6 @@ else:
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/04/27/Python-learning-5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-learning-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/20/Python-learning-4/">Python - learning -4</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/20/Python-learning-4/" class="archive-article-date">
-  	<time datetime="2020-04-20T08:04:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天继续学习Python。</p>
-<p>11、nslookup_check.py 打开文件server_list.txt，然后nslookup。</p>
-<p>一开始我压根就不知道 nslookup 做什么的，反正干就是了。后来查了一下，nslookup命令用于查询DNS的记录，查看域名解析是否正常，在网络故障的时候用来诊断网络问题。</p>
-<p>另外，下面代码运行需要加上 shell = True,不然无法运行，也不知道为什么。我有查说，只有 Windows需要加，但是 我是Mac啊。</p>
-<p>import subprocess  # Import the subprocess module<br>import os<br>for server in open(‘server_list.txt’):<br>    subprocess.Popen(‘nslookup ‘ + server,shell=True)  # Run the nslookup command for each server in the list</p>
-<p>12、osinfo.py 检查系统信息<br>这个 practice 代码是抄的。我不太懂为什么要这样来看系统电脑信息，直接去电脑里面看就好了呀。<br>import platform as pl</p>
-<p>profile = [<br>    ‘architecture’,<br>    ‘linux_distribution’,<br>    ‘mac_ver’,<br>    ‘machine’,<br>    ‘node’,<br>    ‘platform’,<br>    ‘processor’,<br>    ‘python_build’,<br>    ‘python_compiler’,<br>    ‘python_version’,<br>    ‘release’,<br>    ‘system’,<br>    ‘uname’,<br>    ‘version’,<br>]</p>
-<p>class bcolors:<br>    HEADER = ‘\033[95m’<br>    OKBLUE = ‘\033[94m’<br>    OKGREEN = ‘\033[92m’<br>    WARNING = ‘\033[93m’<br>    FAIL = ‘\033[91m’<br>    ENDC = ‘\033[0m’<br>    BOLD = ‘\033[1m’<br>    UNDERLINE = ‘\033[4m’</p>
-<p>for key in profile:<br>    if hasattr(pl, key):<br>        print(key + bcolors.BOLD + “: “ + str(getattr(pl, key)()) + bcolors.ENDC)<br>13、ping_servers.py 根据指定的参数，ping 应用组关联的服务器。<br>这个practice 我理解实际就是ping下服务器看它是否 work，标准答案很复杂，实际简单点来说如下：</p>
-<p>import os</p>
-<p>for server in open(‘server_list.txt’):<br>    response = os.system(‘ping -c 3 ‘ + server)<br>    if response == 0:<br>        print(server, ‘is good.’)<br>    else:<br>        print(server,’is bad.’)<br>基本来说 有反馈就是work，没反馈就不work。。ping -c 3 代表 ping 3 下。</p>
-<p>14、ping_subnet.py ping 子网<br>这题我放弃了，我觉得和13题没什么区别。顺便了解了一下什么是子网：</p>
-<p>“网络上，数据从一个地方传到另外一个地方，是依靠 IP 寻址。从逻辑上来讲，是两步的。第一步，从 IP 中找到所属的网络，好比是去找这个人是哪个小区的；第二布，再从 IP 中找到主机在这个网络中的位置，好比是在小区里面找到这个人。第一步中的网络，就称之为「子网」（Subnet）。从逻辑上来讲，一般同一子网（Subnet）是使用相同的网关。就好比，一个小区的入口。</p>
-<p>作者：Dion<br>链接：<a href="https://www.zhihu.com/question/21064101/answer/17056026" target="_blank" rel="noopener">https://www.zhihu.com/question/21064101/answer/17056026</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。”</p>
-<p>接下来，我有个决定，跳到最后一题开始吧，因为第15题我感觉真的用不到。</p>
-<p>31、SimpleStopWatch.py 使用 time 模块简单实现秒表功能<br>import time<br>print(‘Press ENTER to begin, Press Ctrl + C to stop’)<br>while True:<br>    try:<br>        input(‘Please Enter’) # For ENTER. Use raw_input() if you are running python 2.x instead of input()<br>        starttime = time.time()<br>        print(‘Started’)<br>        while True:<br>            print(‘Time Elapsed: ‘, round(time.time() - starttime, 0), ‘secs’, end=”\r”)<br>            time.sleep(1) # 1 second delay<br>    except KeyboardInterrupt:<br>        print(‘Stopped’)<br>        endtime = time.time()<br>        print(‘Total Time:’, round(endtime - starttime, 2), ‘secs’)<br>        break</p>
-<p>input() 就是回车后跳到下一行命令启动，time.time() 就是拿到现在当下的时间，然后利用 round（）函数两个相减去，里面0 或 2 表示精确到小数点几位数。<br>exception KeyboardInterrupt,这个一般默认user 输入 Control C</p>
-<p>30、site_health.py 检查远程服务器的健康情况<br>这个主要还是考察request 的用法：</p>
-<p>import requests<br>import urllib.request</p>
-<p>code=requests.get(“<a href="https://yuhuang819.github.io/&quot;).status_code" target="_blank" rel="noopener">https://yuhuang819.github.io/&quot;).status_code</a><br>print(code)</p>
-<p>status=urllib.request.urlopen(“<a href="https://yuhuang819.github.io/&quot;).code" target="_blank" rel="noopener">https://yuhuang819.github.io/&quot;).code</a><br>print(status)</p>
-<p>我们期望反馈回来的是200，因为表示成功处理了请求的状态码。 200(成功)服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页。</p>
-<p>29、youtube.py 输入一首歌曲名称然后获取最佳匹配歌曲并播放<br>刚拿到这个题目，我感觉还挺有意思的。考察爬虫基础知识了。</p>
-<p>编写这个项目的时候，学习了.format()的用法。The format() method formats the specified value(s) and insert them inside the string’s placeholder.</p>
-<p>同时，这里还有一个用法是 x for x in 的用法。new_list = [expression for member in iterable] 同时还学习了 new_list = [expression for member in iterable (if conditional)] 例如：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>sentence = ‘the rocket came back from mars’<br>vowels = [i for i in sentence if i in ‘aeiou’]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>抓歌曲代码如下：<br>import requests,sys,webbrowser,bs4</p>
-<p>query =[x for x in input(‘Enter the name with comma: ‘).split(‘,’)]<br>url = ‘<a href="https://www.youtube.com/results?search_query={}&#39;" target="_blank" rel="noopener">https://www.youtube.com/results?search_query={}&#39;</a><br>search_url = []<br>i=0<br>for i in range(0,len(query)):<br>    search_url = url.format(query[i])<br>    webbrowser.open_new(search_url)</p>
-<p>28、cricket_live_score 使用BeautifulSoup提供板球直播分数<br>关于这个联系，其实就是爬虫的应用。到相应网站去抓取数据，然后从抓取的数据中，清洗出自己想要的数据，然后打印出来。标准答案中，还使用了win0toast 这个module，可以直接跳出一个notification，但是我是用的是 Macbook，好像没发使用这个module。但是我是用 terminal-notifier 也可以在Mac 中实现这个功能，我们来试一下。另外板球比分我就不需要了。我来抓一下篮球比分吧。</p>
-<p>from urllib import request</p>
-<p>import bs4  # Beautiful Soup for Web Scraping<br>import os</p>
-<p>url = “<a href="https://nba.hupu.com/&quot;" target="_blank" rel="noopener">https://nba.hupu.com/&quot;</a><br>team_name = []<br>score_table = []<br>sauce = request.urlopen(url).read()<br>soup = bs4.BeautifulSoup(sauce, “lxml”)<br>for team in soup.find_all(‘span’,attrs={‘class’:’team-name’}):<br>    team_name.append(team.text)</p>
-<p>for score in soup.find_all(‘span’,attrs={‘class’:’team-rate team-rate-highlight’}):<br>    score_table.append(score.text)</p>
-<h1 id="The-notifier-function"><a href="#The-notifier-function" class="headerlink" title="The notifier function"></a>The notifier function</h1><p>def notify(title, subtitle, message):<br>    t = ‘-title {!r}’.format(title)<br>    s = ‘-subtitle {!r}’.format(subtitle)<br>    m = ‘-message {!r}’.format(message)<br>    os.system(‘terminal-notifier {}’.format(‘ ‘.join([m, t, s])))</p>
-<h1 id="Calling-the-function"><a href="#Calling-the-function" class="headerlink" title="Calling the function"></a>Calling the function</h1><p>notify(title    = ‘NBA Regular Game’,<br>       subtitle = team_name[0] + score_table[0] + ‘ ‘ + team_name[2] + score_table[2] + ‘ ‘ + team_name[4] + score_table[4] + ‘ ‘ + team_name[6] + score_table[6],<br>       message  = team_name[1] + score_table[1] + ‘ ‘ + team_name[3] + score_table[3] + ‘ ‘ + team_name[5] + score_table[5] + ‘ ‘ + team_name[7] + score_table[7])</p>
-<p>27、Google_News.py 使用BeautifulSoup通过新闻链接获取新闻标题</p>
-<p>Google news 用不了，我直接抓同花顺的股票新闻吧。</p>
-<p>from urllib import request<br>import ssl</p>
-<p>import bs4  # Beautiful Soup for Web Scraping</p>
-<p>url = request.Request(“<a href="http://www.10jqka.com.cn/&quot;,headers={&#39;User-Agent&#39;:&#39;Mozilla/5.0" target="_blank" rel="noopener">http://www.10jqka.com.cn/&quot;,headers={&#39;User-Agent&#39;:&#39;Mozilla/5.0</a> (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36’})<br>sauce = request.urlopen(url).read()<br>soup = bs4.BeautifulSoup(sauce, “lxml”)<br>news_box_1 = soup.find(‘div’,{‘class’:’tab-container’})<br>news_box_2 = soup.find(‘div’,{‘class’:’tab-container’})</p>
-<p>print(news_box_1.text)<br>print(news_box_2.text)</p>
-<p>考察beautifulsoup 的用法，如何使用 div class 定位来抓取自己想要的信息。一开始抓的时候报错403 是因为没有添加user agent，在这里也一并学习了。</p>
-<p>To be continued.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/20/Python-learning-4/">展开全文 >></a>
         </p>
       
 
