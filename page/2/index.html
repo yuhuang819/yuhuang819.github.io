@@ -152,6 +152,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python-learning-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/13/Python-learning-6/">Python-learning-6</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/13/Python-learning-6/" class="archive-article-date">
+  	<time datetime="2020-05-13T13:28:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天继续python 的学习：</p>
+<p>22、serial_scanner.py 端口扫描</p>
+<p>这个练习我放弃了。没懂这个究竟有什么用。</p>
+<p>21、tweeter.py 用这个脚本发送Twitter</p>
+<p>这个练习是用 api 来 post Twitter，但是我没有账号，所以无法实操。搜集了一下information，可以参考这个 video 来做：<br><a href="https://www.youtube.com/watch?v=0FOUFF4q14A" target="_blank" rel="noopener">https://www.youtube.com/watch?v=0FOUFF4q14A</a></p>
+<p>我本来想搞个微博的，新浪微博的确有api借口，后来看了半天，不是要这个身份验证，要么就是要完善那个个人信息。于是放弃了。</p>
+<p>20、testlines.py 这个脚本用来读取文件并打印100行</p>
+<p>def write_to_file(filename, txt):<br>    with open(filename, ‘w’) as file_object:<br>        s = file_object.write(txt)</p>
+<p>write_to_file(‘server_list.txt’, ‘It is suppose to write 100 lines.’)</p>
+<p>这个就是 打开一个文件，然后修改书写这个文件。</p>
+<p>19、 script_listing.py 这个脚本用来遍历指定目录以及子目录下面所有的文件</p>
+<p>import os</p>
+<p>target = ‘/Users/Yu/Desktop/Hexo’<br>file = open(‘big-listing.txt’,’w’)<br>for root,dirname,files in os.walk(target):<br>    for x in files:<br>        file.write(root + x )<br>file.close()</p>
+<p>不单可以打印出子目录和文件，还可以把它们存储到一个file 里面。<br>这个练习主要是 使用os.walk 这个 function 来遍历目录里面的文件。</p>
+<ol start="18">
+<li>[get_youtube_view.py] 这个标本用来统计 youtube 视频的观看次数，有时我也用来统计歌曲的播放次数。</li>
+</ol>
+<p>这个压根就不是什么统计播放次数，是一个自动大刷器。无限刷观看次数和播放次数的吧。</p>
+<p>import time</p>
+<p>from selenium import webdriver</p>
+<p>count = int(input(“Number of times to be repeated: “))<br>url = input(“Enter the URL : “)<br>print(“Length of video:”)<br>minutes = int(input(“Minutes “))<br>seconds = int(input(“Seconds “))</p>
+<p>refreshrate = minutes * 60 + seconds<br>driver = webdriver.Chrome()</p>
+<p>if url.startswith(“https://“):<br>    driver.get(url)<br>else:<br>    driver.get(“https://“ + url)</p>
+<p>for i in range(count):<br>    # Sets the page to refresh at the refreshrate.<br>    time.sleep(refreshrate)<br>    driver.refresh()</p>
+<p>17、script_count.py 统计目录下不同脚本</p>
+<p>我们来换一个需求吧，统计某个目录下，以某个结尾的文件数量。</p>
+<p>import os<br>dir=”/Users/Yu/Desktop/Mywebsite”<br>m=0</p>
+<p>for root,dirs,files in os.walk(dir):<br>    for file in files:<br>        x = file.split(‘.’)<br>        if x[-1] == ‘html’:<br>            m=m+1</p>
+<p>print(m)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/13/Python-learning-6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python-learning-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -840,77 +931,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/02/13/%E5%8F%8A%E6%97%B6%E7%9A%84%E5%BE%97%E5%88%B0%E6%9C%89%E7%94%A8%E7%9A%84%E4%BF%A1%E6%81%AF%E5%8F%8D%E9%A6%88%EF%BC%8C%E6%98%AF%E6%8F%90%E9%AB%98%E6%94%BF%E5%BA%9C%E5%B7%A5%E4%BD%9C%E7%9A%84%E4%BF%9D%E9%9A%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-重要的一天，我又能为国家和民族做些什么呢" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/07/%E9%87%8D%E8%A6%81%E7%9A%84%E4%B8%80%E5%A4%A9%EF%BC%8C%E6%88%91%E5%8F%88%E8%83%BD%E4%B8%BA%E5%9B%BD%E5%AE%B6%E5%92%8C%E6%B0%91%E6%97%8F%E5%81%9A%E4%BA%9B%E4%BB%80%E4%B9%88%E5%91%A2/">重要的一天，我又能为国家和民族做些什么呢</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/07/%E9%87%8D%E8%A6%81%E7%9A%84%E4%B8%80%E5%A4%A9%EF%BC%8C%E6%88%91%E5%8F%88%E8%83%BD%E4%B8%BA%E5%9B%BD%E5%AE%B6%E5%92%8C%E6%B0%91%E6%97%8F%E5%81%9A%E4%BA%9B%E4%BB%80%E4%B9%88%E5%91%A2/" class="archive-article-date">
-  	<time datetime="2020-02-07T15:45:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天凌晨得知一个悲哀的消息，武汉市中心医院李文亮医生不幸逝世。他是第一个喊出冠性肺炎是有人传人的医生，但是喊出这个消息后，被定性为谣言传播者，之后又被辟谣。当我得知这个新闻的时候，我到卫生间速口，杯子不小心抖了一下打到台面。我抖的原因是愤怒和悲哀。同时，今天我更多的感受到了社会的哀鸣。今天中午，新闻播报，中央纪委会派人彻查此事件，中央也意识到这个问题的严重性。希望能换来一个道歉。</p>
-<p>今天，在哔哩哔哩看到了up主周扒片新制作的一个视频《【扒】不能哭泣，笑容就毫无意义，这里的人处决亲闺女的时候都要笑。《奇诺之旅》之微笑国》，视频链接在这里：<a href="https://www.bilibili.com/video/av87256079?from=search&amp;seid=11042822919759276884" target="_blank" rel="noopener">https://www.bilibili.com/video/av87256079?from=search&amp;seid=11042822919759276884</a> 观看影片后有三点感想：</p>
-<ol>
-<li>影片映射 批评不自由赞美无意义。反响现实当下国内的环境和处境。</li>
-<li>视频中，以奇诺为首的国度，骨子里会看不起女孩的国度。于是会有意识形态的冲突最终上升到战争。</li>
-<li>周扒片这个博主是一个运营高手，而且非常应景接地气。这个时候制作这种短片，可以极速吸粉。而且片子有点鲁迅的影子。</li>
-</ol>
-<p>晚上有读了一篇对曹德旺的采访，曹先生说，中国是中国人的中国，现在当务之急是先稳定疫情，有什么问题可以后面再慢慢讨论。同时，我也看到中央财政拨款几百亿的拨款，举全国之力救治和支援湖北。国家政府的确也都有在努力，白花花的银子拨款下来。我们又为这个国家和民族做了些什么呢。</p>
-<p>写罢，还是去读书和学习读下韩语吧。时刻准备着，有朝一日，民族的召唤，成就伟业。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/07/%E9%87%8D%E8%A6%81%E7%9A%84%E4%B8%80%E5%A4%A9%EF%BC%8C%E6%88%91%E5%8F%88%E8%83%BD%E4%B8%BA%E5%9B%BD%E5%AE%B6%E5%92%8C%E6%B0%91%E6%97%8F%E5%81%9A%E4%BA%9B%E4%BB%80%E4%B9%88%E5%91%A2/">展开全文 >></a>
         </p>
       
 

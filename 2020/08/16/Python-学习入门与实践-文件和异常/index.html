@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python 学习入门与实践 - 类 | 鱼先生的博客</title>
+  <title>Python 学习入门与实践 - 文件和异常 | 鱼先生的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面向对象编程。基于类创建对象时，每个对象都自动具备这种通用行为，然后可根据需要赋予每个对象独特的个性。根据类来创建对象被称为实例化。 了解背后的概念可培养逻辑思维，让你能够通过编写程序来解决遇到的几乎任何问题。 创建和使用类：表示小狗的简单类Dog根据Dog类创建的每个实例都将存储名字和年龄。我们赋予每条小狗蹲下sit()和打滚roll_over()的能力：class Dog():     “””">
+  <meta name="description" content="从文件中读取数据：读取整个文件：with open(‘pi_digits.txt’) as file_object:    contents &#x3D; file_object.read()    print(contents) 关键字with在不再需要访问文件后将其关闭。你也可以调用open()和close()来打开和关闭文件，但这样做时，如果程序存在bug，导致close()语句未执行，文件将不会关闭">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 学习入门与实践 - 类">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;09&#x2F;Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E7%B1%BB&#x2F;index.html">
+<meta property="og:title" content="Python 学习入门与实践 - 文件和异常">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;08&#x2F;16&#x2F;Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%96%87%E4%BB%B6%E5%92%8C%E5%BC%82%E5%B8%B8&#x2F;index.html">
 <meta property="og:site_name" content="鱼先生的博客">
-<meta property="og:description" content="面向对象编程。基于类创建对象时，每个对象都自动具备这种通用行为，然后可根据需要赋予每个对象独特的个性。根据类来创建对象被称为实例化。 了解背后的概念可培养逻辑思维，让你能够通过编写程序来解决遇到的几乎任何问题。 创建和使用类：表示小狗的简单类Dog根据Dog类创建的每个实例都将存储名字和年龄。我们赋予每条小狗蹲下sit()和打滚roll_over()的能力：class Dog():     “””">
+<meta property="og:description" content="从文件中读取数据：读取整个文件：with open(‘pi_digits.txt’) as file_object:    contents &#x3D; file_object.read()    print(contents) 关键字with在不再需要访问文件后将其关闭。你也可以调用open()和close()来打开和关闭文件，但这样做时，如果程序存在bug，导致close()语句未执行，文件将不会关闭">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-09T14:16:10.000Z">
-<meta property="article:modified_time" content="2020-08-16T15:20:59.910Z">
+<meta property="article:published_time" content="2020-08-16T15:22:49.000Z">
+<meta property="article:modified_time" content="2020-09-12T11:38:07.816Z">
 <meta property="article:author" content="鱼先生">
 <meta name="twitter:card" content="summary">
   
@@ -154,92 +154,101 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python-学习入门与实践-类" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Python-学习入门与实践-文件和异常" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python 学习入门与实践 - 类
+      Python 学习入门与实践 - 文件和异常
     </h1>
   
 
         
-        <a href="/2020/07/09/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2020-07-09T14:16:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
+        <a href="/2020/08/16/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%96%87%E4%BB%B6%E5%92%8C%E5%BC%82%E5%B8%B8/" class="archive-article-date">
+  	<time datetime="2020-08-16T15:22:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>面向对象编程。<br>基于类创建对象时，每个对象都自动具备这种通用行为，然后可根据需要赋予每个对象独特的个性。<br>根据类来创建对象被称为实例化。</p>
-<p>了解背后的概念可培养逻辑思维，让你能够通过编写程序来解决遇到的几乎任何问题。</p>
-<p>创建和使用类：<br>表示小狗的简单类Dog<br>根据Dog类创建的每个实例都将存储名字和年龄。我们赋予每条小狗蹲下sit()和打滚roll_over()的能力：<br>class Dog():<br>     “””一次模拟小狗的简单尝试”””</p>
-<pre><code>def __init__(self, name, age):
- &quot;&quot;&quot;初始化属性name和age&quot;&quot;&quot;
-    self.name = name
-    self.age = age
-
-def sit(self):
- &quot;&quot;&quot;模拟小狗被命令时蹲下&quot;&quot;&quot;
- print(self.name.title() + &quot; is now sitting.&quot;)
-def roll_over(self):
- &quot;&quot;&quot;模拟小狗被命令时打滚&quot;&quot;&quot;
- print(self.name.title() + &quot; rolled over!&quot;) </code></pre><p>首字母大写的名称指的是类。这个类定义中的括号是空的，因为我们要从空白创建这个类。</p>
-<ol>
-<li>方法<em>init</em>() 类中的函数称为方法；你前面学到的有关函数的一切都适用于方法，唯一重要的差别是调用方法的方式。<em>init</em>()是一个特殊的方法，每当你根据Dog类创建新实例时，python 都会自动运行它。在这个方法的名称中，开头和末尾各有两个下划线，这是一种约定，旨在避免python默认方法与普通方法发生名称冲突。 形参self必不可少，还必须位于其他形参的前面。为何必须在方法定义中包含形参self呢？因为Python调用这个<strong>init</strong>()方法来创建Dog实例时，将自动传入实参self。每个与类相关联的方法调用都自动传递实参self，它是一个指向实例本身的引用，让实例能够访问类中的属性和方法。我们创建Dog实例时，Python将调用Dog类的方法<strong>init</strong>()。我们将通过实参向Dog()传递名字和年龄；self会自动传递，因此我们不需要传递它。每当我们根据Dog类创建实例时，都只需给最后两个形参（name和age）提供值。</li>
-</ol>
-<p>以self为前缀的变量都可供类中的所有方法使用。</p>
-<p>根据类创建实例：<br>可将类视为有关如何创建实例的说明。Dog类是一系列说明，让python知道如何创建表示特定小狗的实例。</p>
-<p>my_dog = Dog(‘Willie’,6)<br>print(‘My dog’s name is ‘ + my_dog.name.title() + ‘.’)<br>print(‘My dog is ‘ + str(my_dog.age) + ‘ years old.’)</p>
-<ol>
-<li>访问属性：要访问实例的属性，可使用句点表示法。my_dog.name</li>
-<li>调用方法：可以使用句点来调用类中定义的任何方法：my_dog.sit(),my_dog.roll_over()如果给属性和方法指定了合适的描述名称，即便是从未见过的代码块，我们也能够轻松推断出它是做什么的。</li>
-<li>创建多个实例：<br>my_dog = Dog(‘willie’,6)<br>your_dog = Dog(‘lucy’,3)</li>
-</ol>
-<p>使用类和实例</p>
-<p>Car 类：<br>class Car():<br>    def <em>init</em>(self,make,model,year):<br>        self.make = make<br>        self.model = model<br>        self.year = year</p>
-<pre><code>def get_descriptive_name(self):
-    long_name = str(self.year) + &apos; &apos; + self.make + &apos; &apos; + self.model
-    return long_name.title()</code></pre><p>my_new_car = Car(‘audi’, ‘a4’, 2016)<br>print(my_new_car.get_descriptive_name())</p>
-<p>给属性指定默认值：在方法<strong>init</strong>()内指定这种初始值是可行的；如果你对某个属性这样做了，就无需包含为它提供初始值的形参。<br>class Car():</p>
-<p>  def <strong>init</strong>(self, make, model, year):<br>     “””初始化描述汽车的属性”””<br>     self.make = make<br>     self.model = model<br>     self.year = year<br>     self.odometer_reading = 0<br>  def get_descriptive_name(self):<br>    –snip–</p>
-<p>  def read_odometer(self):<br>     “””打印一条指出汽车里程的消息”””<br>     print(“This car has “ + str(self.odometer_reading) + “ miles on it.”)<br>修改属性的值：<br>1.直接修改属性的值<br>my_new_car.odometer_reading = 23<br>my_new_car.read_odometer()<br>2.通过方法修改属性的值：<br>class Car():<br> –snip–</p>
-<pre><code>def update_odometer(self, mileage):
- &quot;&quot;&quot;将里程表读数设置为指定的值&quot;&quot;&quot;
- self.odometer_reading = mileage</code></pre><p>my_new_car = Car(‘audi’, ‘a4’, 2016)<br>print(my_new_car.get_descriptive_name())</p>
-<p>my_new_car.update_odometer(23)<br>my_new_car.read_odometer()<br>对Car类所做的唯一修改是在处添加了方法update_odometer()。这个方法接受一个里程值，<br>并将其存储到self.odometer_reading中。在处，我们调用了update_odometer()，并向它提供了<br>实参23（该实参对应于方法定义中的形参mileage）。它将里程表读数设置为23；而方法<br>read_odometer()打印该读数：</p>
-<ol start="3">
-<li><p>通过方法对属性的值进行递增<br>class Car():<br>  –snip–</p>
-<p>  def update_odometer(self, mileage):<br>  –snip–</p>
-<p> def increment_odometer(self, miles):<br>  “””将里程表读数增加指定的量”””<br>  self.odometer_reading += miles</p>
-</li>
-</ol>
-<p>my_used_car = Car(‘subaru’, ‘outback’, 2013)<br>print(my_used_car.get_descriptive_name())<br>my_used_car.update_odometer(23500)<br>my_used_car.read_odometer()<br>my_used_car.increment_odometer(100)<br>my_used_car.read_odometer() </p>
-<p>继承：如果你编写的类是另一个现成类的特殊版本，可使用继承。一个类继承另一个类时，它将自动获得另一个类的所有属性和方法。原有的类称为父类，新类成为子类。<br>子类方法<em>init</em>():首先需要的是给父类的所有属性赋值。<br>class Car():<br> “””一次模拟汽车的简单尝试”””<br> def <strong>init</strong>(self, make, model, year):<br>     self.make = make<br>     self.model = model<br>     self.year = year<br>     self.odometer_reading = 0</p>
-<p> def get_descriptive_name(self):<br>     long_name = str(self.year) + ‘ ‘ + self.make + ‘ ‘ + self.model<br>     return long_name.title()</p>
-<p> def read_odometer(self):<br>     print(“This car has “ + str(self.odometer_reading) + “ miles on it.”)</p>
-<p> def update_odometer(self, mileage):<br>     if mileage &gt;= self.odometer_reading:<br>     self.odometer_reading = mileage<br>     else:<br>     print(“You can’t roll back an odometer!”)</p>
-<p> def increment_odometer(self, miles):<br>     self.odometer_reading += miles</p>
-<p> class ElectricCar(Car):<br> “””电动汽车的独特之处”””</p>
-<p> def <strong>init</strong>(self, make, model, year):<br> “””初始化父类的属性”””<br>  super().<strong>init</strong>(make, model, year)</p>
-<p>my_tesla = ElectricCar(‘tesla’, ‘model s’, 2016)<br>print(my_tesla.get_descriptive_name()) </p>
-<p>创建子类时，父类必须包含在当前文件中，且位于子类前面。定义子类时，必须在括号内指定父类的名称。方法<em>init</em>() 接受创建 Car 实例所需的信息。super()是一个特殊函数，帮助python将父类和子类关联起来。父类也称为超类（superclass），so called super()。</p>
-<p>给子类定义属性和方法：<br>class Car():<br> –snip–<br>class ElectricCar(Car):<br> “””Represent aspects of a car, specific to electric vehicles.”””<br> def <strong>init</strong>(self, make, model, year):<br>     “””<br>     电动汽车的独特之处<br>     初始化父类的属性，再初始化电动汽车特有的属性<br>     “””<br>     super().<strong>init</strong>(make, model, year)<br>     self.battery_size = 70</p>
-<p> def describe_battery(self):<br>     “””打印一条描述电瓶容量的消息”””<br>     print(“This car has a “ + str(self.battery_size) + “-kWh battery.”)<br>my_tesla = ElectricCar(‘tesla’, ‘model s’, 2016)<br>print(my_tesla.get_descriptive_name())<br>my_tesla.describe_battery() </p>
-<p>添加新属性self.battery_size,并设置其初始值（如70）。如果一个属性或方法是任何汽车都有的，而不是电动车特有的，可以将其加入到Car类而不是ElectricCar类中。</p>
-<p>重写父类的方法：<br>def ElectricCar(Car):<br> –snip–<br>     def fill_gas_tank():<br>         “””电动汽车没有油箱”””<br>         print(“This car doesn’t need a gas tank!”)<br>如果有人对电动汽车调用方法 fill_gas_tank(),python将忽略Car类中的fill_gas_tank(),转而运行上述代码。</p>
-<p>将实例用作属性：<br>我们可以将这些属性和方法提取出来，放到另外一个名为Battery的类中，并将一个Battery实例用作ElectricCar类的一个属性。<br>class Car():<br> –snip–</p>
-<p>class Battery():<br> “””一次模拟电动汽车电瓶的简单尝试”””</p>
-<p>  def <strong>init</strong>(self, battery_size=70):<br>    “””初始化电瓶的属性”””<br>     self.battery_size = battery_size<br>  def describe_battery(self):<br>     “””打印一条描述电瓶容量的消息”””<br>     print(“This car has a “ + str(self.battery_size) + “-kWh battery.”)<br>  def upgrade_batter():<br>    if self.battery_size != 85:<br>        self.batter_size = 85</p>
-<p>class ElectricCar(Car):<br>     “””电动汽车的独特之处”””<br>     def <strong>init</strong>(self, make, model, year):<br>         “””<br>         初始化父类的属性，再初始化电动汽车特有的属性<br>         “””<br>         super().<strong>init</strong>(make, model, year)<br>         self.battery = Battery()</p>
-<p>my_tesla = ElectricCar(‘tesla’, ‘model s’, 2016)<br>print(my_tesla.get_descriptive_name())<br>my_tesla.battery.describe_battery() </p>
-<p>添加一个self.battery的属性，将实例存储在属性self.battery中。</p>
-<p>模拟实物：将方法get_range()还留在Battery类中，但向它传递一个参数，如<br>car_model；在这种情况下，方法get_range()将根据电瓶容量和汽车型号报告续航里程。</p>
-<p>导入类：Python 允许你将类存储在模块中，然后再主程序中导入所需的模块。<br>导入单个类：from car import Car<br>在一个模块中存储多个类: 用逗号分隔各个类。<br>导入整个模块： import car， 接下来可以使用语法 module_name.class_name. my_tesla = car.ElectricCar(‘tesla’,’roadster’,2016)<br>导入模块中的所有类：from module_name import * (不推荐，容易发生困惑)<br>在一个模块中导入另一个模块：将ElectricCar 和 Battery 存储到 第二个模块，electric_car.py   class ElectricCar(car)<br>自定义工作流程：<br>Python 标准库：安装的python 都包含它。模块collections 中的一个类 - OrderedDict<br>OrderedDict 实例的行为几乎与字典相同，区别只在于记录了键-值对的添加顺序。有序字典。<br>类编码风格：类名应采用驼峰命名法。类名中的每个单词的首字母都大写。实例名和模块都小写 加下划线。</p>
-
+        <p>从文件中读取数据：<br>读取整个文件：<br>with open(‘pi_digits.txt’) as file_object:<br>    contents = file_object.read()<br>    print(contents)</p>
+<p>关键字with在不再需要访问文件后将其关闭。你也可以调用open()和close()来打开和关闭文件，但这样做时，如果程序存在bug，导致close()语句未执行，文件将不会关闭。</p>
+<p>相比于原始文件，该输出唯一不同的地方是末尾多了一个空行。为何会多出这个空行呢？因<br>为read()到达文件末尾时返回一个空字符串，而将这个空字符串显示出来时就是一个空行。要删<br>除多出来的空行，可在print语句中使用rstrip()：<br>with open(‘pi_digits.txt’) as file_object:<br> contents = file_object.read()<br> print(contents.rstrip()) </p>
+<p>Python方法rstrip()删除（剥除）字符串末尾的空白。</p>
+<p>文件路径：要让Python打开不与程序文件位于同一个目录中的文件，需要提供文件路径，它让Python到系统的特定位置去查找。<br>绝对路径：file_path = ‘/home/ehmatthes/other_files/text_files/filename.txt’<br>         with open(file_path) as file_object:<br>逐行读取：使用 for 语句<br>创建一个包含文件各行内容的列表：<br>with open(filename) as file_object:<br>  lines = file_object.readlines()</p>
+<p>for line in lines:<br>  print(line.rstrip())<br>readlines() 从文件中读取每一行，并将其存储在一个列表中。</p>
+<p>使用文件的内容：<br>filename = ‘pi_30_digits.txt’<br>with open(filename) as file_object:<br> lines = file_object.readlines()<br>pi_string = ‘’<br>for line in lines:<br> pi_string += line.strip()<br>print(pi_string)<br>print(len(pi_string)) </p>
+<p>在变量pi_string存储的字符串中，包含原来位于每行左边的空格，为删除这些空格，可使<br>用strip()而不是rstrip()</p>
+<p>包含一百万位的大型文件：<br>写入空文件：你在调用open()需要提供另一个实参。<br>filename = ‘programming.txt’<br>    with open(filename, ‘w’) as file_object:<br>    file_object.write(“I love programming.”) </p>
+<p>第二个实参，w 告诉python，我们要以写入模式打开这个文件。打开文件时，可指定读取模<br>式（’r’）、写入模式（’w’）、附加模式（’a’）或让你能够读取和写入文件的模式（’r+’）。如果<br>你省略了模式实参，Python将以默认的只读模式打开文件。</p>
+<p>如果你要写入的文件不存在，函数open()将自动创建它。</p>
+<p>写入多行：要让每个字符串都单独占一行，需要在write()语句中包含换行符：<br>filename = ‘programming.txt’<br>with open(filename, ‘w’) as file_object:<br> file_object.write(“I love programming.\n”)<br> file_object.write(“I love creating new games.\n”) </p>
+<p>附加到文件：可以附加模式打开文件。你以附加模式打开文件时，Python不会在返回文件对象前清空文件，而你写入到文件的行都将添加到文件末尾。如果指定的文件不存在，Python将为你创建一个空文件。</p>
+<p>filename = ‘programming.txt’<br> with open(filename, ‘a’) as file_object:<br>    file_object.write(“I also love finding meaning in large datasets.\n”)<br>    file_object.write(“I love creating apps that can run in a browser.\n”) </p>
+<p>异常：异常是使用try-except代码块处理的。try-except代码块让Python执行指定的操作，同时告<br>诉Python发生异常时怎么办。使用了try-except代码块时，即便出现异常，程序也将继续运行：<br>显示你编写的友好的错误消息，而不是令用户迷惑的traceback。</p>
+<p>处理 ZeroDivisionError 异常：<br>使用 try-except 代码块：<br>try:<br> print(5/0)<br>except ZeroDivisionError:<br> print(“You can’t divide by zero!”) </p>
+<p>使用异常避免崩溃：<br>print(“Give me two numbers, and I’ll divide them.”)<br>print(“Enter ‘q’ to quit.”)<br>while True:<br>     first_number = input(“\nFirst number: “)<br>     if first_number == ‘q’:<br>        break<br>     second_number = input(“Second number: “)<br>     if second_number == ‘q’:<br>        break<br>     answer = int(first_number) / int(second_number)<br>     print(answer) </p>
+<p>else代码块：通过将可能引发错误的代码放在try-except代码块中，可提高这个程序抵御错误的能力。错误是执行除法运算的代码行导致的，因此我们需要将它放到try-except代码块中。<br>print(“Give me two numbers, and I’ll divide them.”)<br>print(“Enter ‘q’ to quit.”)<br>while True:<br> first_number = input(“\nFirst number: “)<br> if first_number == ‘q’:<br> break<br> second_number = input(“Second number: “)<br>try:<br> answer = int(first_number) / int(second_number)<br>except ZeroDivisionError:<br> print(“You can’t divide by 0!”)<br>else:<br> print(answer) </p>
+<p>try-except-else代码块的工作原理大致如下：Python尝试执行try代码块中的代码；只有可<br>能引发异常的代码才需要放在try语句中。有时候，有一些仅在try代码块成功执行时才需要运行<br>的代码；这些代码应放在else代码块中。except代码块告诉Python，如果它尝试运行try代码块中<br>的代码时引发了指定的异常，该怎么办。</p>
+<p>处理 flienotfounderror 异常：<br>使用文件时，一种常见的问题是找不到文件：你要查找的文件可能在其他地方、文件名可能<br>不正确或者这个文件根本就不存在。对于所有这些情形，都可使用try-except代码块以直观的方<br>式进行处理。</p>
+<p>filename = ‘alice.txt’<br>try:<br> with open(filename) as f_obj:<br> contents = f_obj.read()<br>except FileNotFoundError:<br> msg = “Sorry, the file “ + filename + “ does not exist.”<br> print(msg) </p>
+<p>分析文本：<br>filename = ‘alice.txt’<br>try:<br> with open(filename) as f_obj:<br> contents = f_obj.read()<br>except FileNotFoundError:<br> msg = “Sorry, the file “ + filename + “ does not exist.”<br> print(msg)<br>else:</p>
+<h1 id="计算文件大致包含多少个单词"><a href="#计算文件大致包含多少个单词" class="headerlink" title="计算文件大致包含多少个单词"></a>计算文件大致包含多少个单词</h1><pre><code>words = contents.split()
+num_words = len(words)
+print(&quot;The file &quot; + filename + &quot; has about &quot; + str(num_words) + &quot; words.&quot;) </code></pre><p>使用多个文件：<br>def count_words(filename):<br> “””计算一个文件大致包含多少个单词”””<br> try:<br>     with open(filename) as f_obj:<br>        contents = f_obj.read()<br> except FileNotFoundError:<br>    msg = “Sorry, the file “ + filename + “ does not exist.”<br>    print(msg)<br> else:</p>
+<h1 id="计算文件大致包含多少个单词-1"><a href="#计算文件大致包含多少个单词-1" class="headerlink" title="计算文件大致包含多少个单词"></a>计算文件大致包含多少个单词</h1><pre><code>words = contents.split()
+num_words = len(words)
+print(&quot;The file &quot; + filename + &quot; has about &quot; + str(num_words) +
+&quot; words.&quot;)</code></pre><p>filename = ‘alice.txt’<br>count_words(filename)<br>现在可以编写一个简单的循环，计算要分析的任何文本包含多少个单词了。为此，我们将要<br>分析的文件的名称存储在一个列表中，然后对列表中的每个文件都调用count_words()。我们将<br>尝试计算Alice in Wonderland、Siddhartha、Moby Dick和Little Women分别包含多少个单词，它们都不受版权限制。我故意没有将siddhartha.txt放到word_count.py所在的目录中，让你能够看到这个程序在文件不存在时处理得有多出色：</p>
+<p>def count_words(filename):<br> –snip–<br>    filenames = [‘alice.txt’, ‘siddhartha.txt’, ‘moby_dick.txt’, ‘little_women.txt’]<br>    for filename in filenames:<br>     count_words(filename)<br>文件siddhartha.txt不存在，但这丝毫不影响这个程序处理其他文件。<br>在这个示例中，使用try-except代码块提供了两个重要的优点：避免让用户看到traceback；<br>让程序能够继续分析能够找到的其他文件。如果不捕获因找不到siddhartha.txt而引发的<br>FileNotFoundError异常，用户将看到完整的traceback，而程序将在尝试分析Siddhartha后停止运<br>行——根本不分析Moby Dick和Little Women。</p>
+<p>失败时一声不吭：在前一个示例中，我们告诉用户有一个文件找不到。但并非每次捕获到异常时都需要告诉用户，有时候你希望程序在发生异常时一声不吭，就像什么都没有发生一样继续运行。要让程序在<br>失败时一声不吭，可像通常那样编写try代码块，但在except代码块中明确地告诉Python什么都不<br>要做。Python有一个pass语句，可在代码块中使用它来让Python什么都不要做：<br>def count_words(filename):<br> “””计算一个文件大致包含多少个单词”””<br> try:<br> –snip–<br> except FileNotFoundError:<br>     pass<br> else:<br> –snip–<br>filenames = [‘alice.txt’, ‘siddhartha.txt’, ‘moby_dick.txt’, ‘little_women.txt’]<br>for filename in filenames:<br> count_words(filename) </p>
+<p>相比于前一个程序，这个程序唯一不同的地方是 Ø 处 的 pass 语句。现在，出现<br>FileNotFoundError异常时，将执行except代码块中的代码，但什么都不会发生。这种错误发生时，<br>不会出现traceback，也没有任何输出。用户将看到存在的每个文件包含多少个单词，但没有任何<br>迹象表明有一个文件未找到。</p>
+<p>pass语句还充当了占位符，它提醒你在程序的某个地方什么都没有做，并且以后也许要在这<br>里做些什么。例如，在这个程序中，我们可能决定将找不到的文件的名称写入到文件<br>missing_files.txt中。用户看不到这个文件，但我们可以读取这个文件，进而处理所有文件找不到<br>的问题。</p>
+<p>决定报告哪些错误：。Python的错误处理结构让你能够细致地控制与用户分享错误信息的程度，要分享多少信息由你决定。</p>
+<p>存储数据：不管专注的是什么，程序都把用户提供的信息存储在列表和字典等数据结构中。用户关闭程序时，你几乎总是要保存他们提供的信息；一种简单的方式是使用模块json来存储数据。</p>
+<p>模块json让你能够将简单的Python数据结构转储到文件中，并在程序再次运行时加载该文件<br>中的数据。你还可以使用json在Python程序之间分享数据。更重要的是，JSON数据格式并非Python<br>专用的，这让你能够将以JSON格式存储的数据与使用其他编程语言的人分享。这是一种轻便格<br>式，很有用，也易于学习。</p>
+<p>JSON（JavaScript Object Notation）格式最初是为JavaScript开发的，但随后成了一种常见<br>格式，被包括Python在内的众多语言采用。</p>
+<p>使用json.dump() 和 json.load():<br>第一个程序将使用json.dump()来存储这组数字，而第二个程序将使用json.load()。<br>import json<br>numbers = [2, 3, 5, 7, 11, 13]<br>filename = ‘numbers.json’<br>with open(filename, ‘w’) as f_obj:<br> json.dump(numbers, f_obj) </p>
+<p>import json<br>filename = ‘numbers.json’<br>with open(filename) as f_obj:<br> numbers = json.load(f_obj)</p>
+<p>print(numbers) </p>
+<p>保存和读取用户生成的数据：，因为如果不以某种方式进行存储，等程序停止运行时用户的信息将丢失。下面来看一个这样的例子：</p>
+<p>import json<br>username = input(“What is your name? “)<br>filename = ‘username.json’<br>with open(filename, ‘w’) as f_obj:<br> json.dump(username, f_obj)<br> print(“We’ll remember you when you come back, “ + username + “!”) </p>
+<p>import json<br>filename = ‘username.json’<br>with open(filename) as f_obj:<br> username = json.load(f_obj)<br> print(“Welcome back, “ + username + “!”) </p>
+<p>这个程序运行时，我们将尝试从文件username.json中获取用户名，因此我们首先编写一个尝试恢复用户名的try代码块。如果这个文件不存在，我们就在except代码块中提示用户输入用户名，并将其存储在username.json中，以便程序再次运行时能够获取它：</p>
+<p>import json</p>
+<p>filename = ‘username.json’<br>try:<br> with open(filename) as f_obj:<br>     username = json.load(f_obj)<br> except FileNotFoundError:<br>     username = input(“What is your name? “)<br>     with open(filename, ‘w’) as f_obj:<br>        json.dump(username, f_obj)<br>        print(“We’ll remember you when you come back, “ + username + “!”)<br>else:<br> print(“Welcome back, “ + username + “!”) </p>
+<p>重构：代码能够正确地运行，但可做进一步的改进——将代码划分为一系列完成具体工作的函数。这样的过程被称为重构。重构让代码更清晰、更易于理解、更容易扩展。</p>
+<p>要重构remember_me.py，可将其大部分逻辑放到一个或多个函数中。remember_me.py的重点<br>是问候用户，因此我们将其所有代码都放到一个名为greet_user()的函数中：</p>
+<p>import json<br>def greet_user():<br> “””问候用户，并指出其名字”””<br> filename = ‘username.json’<br> try:<br>    with open(filename) as f_obj:<br>     username = json.load(f_obj)<br> except FileNotFoundError:<br>    username = input(“What is your name? “)<br>    with open(filename, ‘w’) as f_obj:<br>        json.dump(username, f_obj)<br>        print(“We’ll remember you when you come back, “ + username + “!”)<br> else:<br>    print(“Welcome back, “ + username + “!”)<br>greet_user() </p>
+<p>重构 greet_user(),让它不执行这么多任务。为此，我们首先将获取存储的用户名的<br>代码移到另一个函数中：</p>
+<p>import json<br>def get_stored_username():<br> “””如果存储了用户名，就获取它”””<br> filename = ‘username.json’<br> try:<br>     with open(filename) as f_obj:<br>        username = json.load(f_obj)<br> except FileNotFoundError:<br>  return None<br> else:<br> return username<br>def greet_user():<br> “””问候用户，并指出其名字”””<br>  username = get_stored_username()<br>  if username:<br>    print(“Welcome back, “ + username + “!”)<br> else:<br>     username = input(“What is your name? “)<br>     filename = ‘username.json’<br>     with open(filename, ‘w’) as f_obj:<br>        json.dump(username, f_obj)<br>        print(“We’ll remember you when you come back, “ + username + “!”)<br>greet_user() </p>
+<p>新增的函数get_stored_username()目标明确，Ø处的文档字符串指出了这一点。如果存储了<br>用户名，这个函数就获取并返回它；如果文件username.json不存在，这个函数就返回None（见）。这是一种不错的做法：函数要么返回预期的值，要么返回None；这让我们能够使用函数的返回值<br>做简单测试。在处，如果成功地获取了用户名，就打印一条欢迎用户回来的消息，否则就提示用户输入用户名。</p>
+<p>我们还需将greet_user()中的另一个代码块提取出来：将没有存储用户名时提示用户输入的<br>代码放在一个独立的函数中：</p>
+<p>import json<br>def get_stored_username():<br> “””如果存储了用户名，就获取它”””<br> –snip–<br>def get_new_username():<br> “””提示用户输入用户名”””<br> username = input(“What is your name? “)<br> filename = ‘username.json’<br> with open(filename, ‘w’) as f_obj:<br> json.dump(username, f_obj)<br> return username<br>def greet_user():<br> “””问候用户，并指出其名字”””<br> username = get_stored_username()<br> if username:<br> print(“Welcome back, “ + username + “!”)<br> else:<br> username = get_new_username()<br> print(“We’ll remember you when you come back, “ + username + “!”)<br>greet_user() </p>
+<p>在remember_me.py的这个最终版本中，每个函数都执行单一而清晰的任务。我们调用<br>greet_user()，它打印一条合适的消息：要么欢迎老用户回来，要么问候新用户。为此，它首先<br>调用get_stored_username()，这个函数只负责获取存储的用户名（如果存储了的话），再在必要<br>时调用get_new_username()，这个函数只负责获取并存储新用户的用户名。要编写出清晰而易于<br>维护和扩展的代码，这种划分工作必不可少。</p>
+<p>我们还需将greet_user()中的另一个代码块提取出来：将没有存储用户名时提示用户输入的<br>代码放在一个独立的函数中：</p>
+<p>import json</p>
+<p>def get_stored_username():<br> “””如果存储了用户名，就获取它”””<br> –snip–<br>def get_new_username():<br> “””提示用户输入用户名”””<br> username = input(“What is your name? “)<br> filename = ‘username.json’<br> with open(filename, ‘w’) as f_obj:<br> json.dump(username, f_obj)<br> return username<br>def greet_user():<br> “””问候用户，并指出其名字”””<br> username = get_stored_username()<br> if username:<br> print(“Welcome back, “ + username + “!”)<br> else:<br> username = get_new_username()<br> print(“We’ll remember you when you come back, “ + username + “!”)<br>greet_user() </p>
+<p>Reference:<br>import json</p>
+<p>def get_stored_username():<br>    filename = ‘username.json’<br>    try:<br>         with open(filename) as f_obj:<br>            username = json.load(f_obj)<br>    except FileNotFoundError:<br>        return None<br>    else:<br>        return username</p>
+<p>def get_new_username():<br>    username = input(“What is your name? “)<br>    filename = ‘username.json’<br>    with open(filename, ‘w’) as f_obj:<br>        json.dump(username, f_obj)<br>        return username<br>def greet_user():<br>    username = get_stored_username()<br>    if username:<br>         check = input(‘Please let me know whether this username: ‘ + username + ‘ is correct. Y or N: ‘)<br>         check = check.title()<br>         if check == ‘Y’:<br>            print(“Welcome back, “ + username + “!”)<br>         else:<br>           username = get_new_username()<br>           print(“We’ll remember you when you come back, “ + username + “!”)<br>    else:<br>         username = get_new_username()<br>         print(“We’ll remember you when you come back, “ + username + “!”)</p>
+<p>greet_user() </p>
+<p>import json</p>
+<p>def tell_number():<br>    file_name = ‘favourite_number.json’<br>    with open(file_name) as f_obj:<br>        number = json.load(f_obj)</p>
+<pre><code>print(&apos;I know your favorite number is &apos; + str(number))</code></pre><p>try:<br>    tell_number()</p>
+<p>except FileNotFoundError:</p>
+<pre><code>favourite_number = input(&quot;Please tell me your favoroute number:&quot;)
+favourite_number = int(favourite_number)
+file_name = &apos;favourite_number.json&apos;
+with open(file_name, &apos;w&apos;) as f_obj:
+    json.dump(favourite_number,f_obj)</code></pre><p>filenames = [‘cats.txt’,’dogs.txt’,’alice.txt’]<br>for filename in filenames:<br>    try:<br>     with open(filename) as f_obj:<br>        contents = f_obj.read()<br>    except FileNotFoundError:<br>        msg = “Sorry, the file “ + filename + “ does not exist.”<br>        print(msg)</p>
+<pre><code>else:
+ #计算文件大致包含多少个单词
+    num_words = contents.count(&apos;the&apos;)
+    print(&quot;The file &quot; + filename + &quot; has word the &quot; + str(num_words) + &quot; words.&quot;) </code></pre>
       
 
       
@@ -318,7 +327,7 @@ def roll_over(self):
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/09/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E7%B1%BB/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/16/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%96%87%E4%BB%B6%E5%92%8C%E5%BC%82%E5%B8%B8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,18 +341,9 @@ def roll_over(self):
   
 <nav id="article-nav">
   
-    <a href="/2020/08/16/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%96%87%E4%BB%B6%E5%92%8C%E5%BC%82%E5%B8%B8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Python 学习入门与实践 - 文件和异常
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Python 学习入门与实践 - 函数</div>
+    <a href="/2020/07/09/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E7%B1%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python 学习入门与实践 - 类</div>
       <i class="icon-circle-right"></i>
     </a>
   
