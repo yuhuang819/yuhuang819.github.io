@@ -16,7 +16,7 @@
 <meta property="og:description" content="学习如何使用Python模块unittest中的工具来测试代码。 测试函数：name_function.py  def get_formatted_name(first, last): “””Generate a neatly formatted full name.””” full_name &#x3D; first + ‘ ‘ + last return full_name.title()  names">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-12T11:46:47.000Z">
-<meta property="article:modified_time" content="2020-09-20T16:05:59.605Z">
+<meta property="article:modified_time" content="2020-11-01T10:31:40.404Z">
 <meta property="article:author" content="鱼先生">
 <meta name="twitter:card" content="summary">
   
@@ -209,7 +209,24 @@
 <p>from survey import AnonymousSurvey<br>#定义一个问题，并创建一个表示调查的AnonymousSurvey对象<br>question = “What language did you first learn to speak?”<br>my_survey = AnonymousSurvey(question)<br>#显示问题并存储答案<br>my_survey.show_question()<br>print(“Enter ‘q’ at any time to quit.\n”)<br>while True:<br> response = input(“Language: “)<br> if response == ‘q’:<br>    break<br> my_survey.store_response(response)</p>
 <h1 id="显示调查结果"><a href="#显示调查结果" class="headerlink" title="显示调查结果"></a>显示调查结果</h1><p>print(“\nThank you to everyone who participated in the survey!”)<br>my_survey.show_results() </p>
 <p>这个程序定义了一个问题（”What language did you first learn to speak? “），并使用这个<br>问题创建了一个AnonymousSurvey对象。接下来，这个程序调用show_question()来显示问题，并<br>提示用户输入答案。收到每个答案的同时将其存储起来。用户输入所有答案（输入q要求退出）<br>后，调用show_results()来打印调查结果.</p>
-<p> 测试 AnonymousSurvey 类:</p>
+<p>测试 AnonymousSurvey 类:</p>
+<p>对AnonymousSurvey类的行为的一个方面进行验证：如果用户面对调查<br>问题时只提供了一个答案，这个答案也能被妥善地存储。为此，我们将在这个答案被存储后，使<br>用方法assertIn()来核实它包含在答案列表中：</p>
+<p>test_survey.py<br>import unittest<br>from survey import AnonymousSurvey </p>
+<p>class TestAnonmyousSurvey(unittest.TestCase):<br>  “””针对AnonymousSurvey类的测试”””</p>
+<p>def test_store_single_response(self):<br> “””测试单个答案会被妥善地存储”””<br>  question = “What language did you first learn to speak?”<br>  my_survey = AnonymousSurvey(question)<br>  my_survey.store_response(‘English’)</p>
+<p>  self.assertIn(‘English’, my_survey.responses)<br>unittest.main() </p>
+<p>这很好，但只能收集一个答案的调查用途不大。下面来核实用户提供三个答案时，它们也将<br>被妥善地存储。为此，我们在TestAnonymousSurvey中再添加一个方法：</p>
+<p>import unittest<br>from survey import AnonymousSurvey<br>class TestAnonymousSurvey(unittest.TestCase):<br> “””针对AnonymousSurvey类的测试”””</p>
+<p> def test_store_single_response(self):<br> “””测试单个答案会被妥善地存储”””<br> –snip–</p>
+<p> def test_store_three_responses(self):<br> “””测试三个答案会被妥善地存储”””<br> question = “What language did you first learn to speak?”<br> my_survey = AnonymousSurvey(question)<br> responses = [‘English’, ‘Spanish’, ‘Mandarin’]<br> for response in responses:<br>    my_survey.store_response(response)</p>
+<p>  for response in responses:<br>    self.assertIn(response, my_survey.responses)<br>unittest.main() </p>
+<p>方法 setUp():<br>unittest.TestCase类包含方法setUp()，让我们只需创建这些对象一<br>次，并在每个测试方法中使用它们。如果你在TestCase类中包含了方法setUp()，Python将先运行<br>它，再运行各个以test_打头的方法。</p>
+<p>下面使用setUp()来创建一个调查对象和一组答案，供方法test_store_single_response()和<br>test_store_three_responses()使用：</p>
+<p>import unittest<br>from survey import AnonymousSurvey<br>class TestAnonymousSurvey(unittest.TestCase):<br> “””针对AnonymousSurvey类的测试”””</p>
+<p> def setUp(self):<br> “””<br> 创建一个调查对象和一组答案，供使用的测试方法使用<br> “””<br> question = “What language did you first learn to speak?”<br>  self.my_survey = AnonymousSurvey(question)<br>  self.responses = [‘English’, ‘Spanish’, ‘Mandarin’] </p>
+<p> def test_store_single_response(self):<br> “””测试单个答案会被妥善地存储”””<br> self.my_survey.store_response(self.responses[0])<br> self.assertIn(self.responses[0], self.my_survey.responses)</p>
+<p> def test_store_three_responses(self):<br> “””测试三个答案会被妥善地存储”””<br> for response in self.responses:<br> self.my_survey.store_response(response)<br> for response in self.responses:<br> self.assertIn(response, self.my_survey.responses)<br>unittest.main() </p>
+<p>运行测试用例时，每完成一个单元测试，Python都打印一个字符：测试通过时打印一个<br>句点；测试引发错误时打印一个E；测试导致断言失败时打印一个F。这就是你运行测试<br>用例时，在输出的第一行中看到的句点和字符数量各不相同的原因。如果测试用例包含<br>很多单元测试，需要运行很长时间，就可通过观察这些结果来获悉有多少个测试通过了。</p>
 
       
 
@@ -302,6 +319,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/11/01/%E9%A1%B9%E7%9B%AE1-%20%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          项目1  数据可视化
+        
+      </div>
+    </a>
   
   
     <a href="/2020/08/16/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%96%87%E4%BB%B6%E5%92%8C%E5%BC%82%E5%B8%B8/" id="article-nav-older" class="article-nav-link-wrap">

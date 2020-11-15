@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 鱼先生的博客</title>
+  <title>项目1  数据可视化 | 鱼先生的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="鱼先生的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+  <meta name="description" content="安装 matplotlib. 测试 matplotlib 绘制简单的折线import matplotlib.pyplot as pltsquares &#x3D; [1, 4, 9, 16, 25]plt.plot(squares, linewidth&#x3D;5)  设置图表标题，并给坐标轴加上标签plt.title(“Square Numbers”, fontsize&#x3D;24)plt.xlabel(“Value”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目1  数据可视化">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;11&#x2F;01&#x2F;%E9%A1%B9%E7%9B%AE1-%20%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96&#x2F;index.html">
 <meta property="og:site_name" content="鱼先生的博客">
+<meta property="og:description" content="安装 matplotlib. 测试 matplotlib 绘制简单的折线import matplotlib.pyplot as pltsquares &#x3D; [1, 4, 9, 16, 25]plt.plot(squares, linewidth&#x3D;5)  设置图表标题，并给坐标轴加上标签plt.title(“Square Numbers”, fontsize&#x3D;24)plt.xlabel(“Value”">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-01T10:28:16.000Z">
+<meta property="article:modified_time" content="2020-11-15T14:13:50.947Z">
 <meta property="article:author" content="鱼先生">
 <meta name="twitter:card" content="summary">
   
@@ -150,295 +154,289 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-项目1- 数据可视化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      项目1  数据可视化
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/01/%E9%A1%B9%E7%9B%AE1-%20%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" class="archive-article-date">
+
+        
+        <a href="/2020/11/01/%E9%A1%B9%E7%9B%AE1-%20%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" class="archive-article-date">
   	<time datetime="2020-11-01T10:28:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/01/%E9%A1%B9%E7%9B%AE1-%20%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">项目1  数据可视化</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>安装 matplotlib.</p>
+<p>测试 matplotlib</p>
+<p>绘制简单的折线<br>import matplotlib.pyplot as plt<br>squares = [1, 4, 9, 16, 25]<br>plt.plot(squares, linewidth=5) </p>
+<h1 id="设置图表标题，并给坐标轴加上标签"><a href="#设置图表标题，并给坐标轴加上标签" class="headerlink" title="设置图表标题，并给坐标轴加上标签"></a>设置图表标题，并给坐标轴加上标签</h1><p>plt.title(“Square Numbers”, fontsize=24)<br>plt.xlabel(“Value”, fontsize=14)<br>plt.ylabel(“Square of Value”, fontsize=14)</p>
+<h1 id="设置刻度标记的大小"><a href="#设置刻度标记的大小" class="headerlink" title="设置刻度标记的大小"></a>设置刻度标记的大小</h1><p>plt.tick_params(axis=’both’, labelsize=14)<br>plt.show() </p>
+<p>修改标签文字和线条粗细</p>
+<p>参数linewidth（见Ø）决定了plot()绘制的线条的粗细。函数title()（见）给图表指定标<br>题。在上述代码中，出现了多次的参数fontsize指定了图表中文字的大小。<br>函数xlabel()和ylabel()让你能够为每条轴设置标题（见）；而函数tick_params()设置刻度<br>的样式（见），其中指定的实参将影响x轴和y轴上的刻度（axes=’both’），并将刻度标记的字号<br>设置为14（labelsize=14）。</p>
+<p>校正图形</p>
+<p>当你向plot()提供一系列数字时，它假设第一个数据点对应的x坐标值为0，但我们的第一个<br>点对应的x值为1。为改变这种默认行为，我们可以给plot()同时提供输入值和输出值：</p>
+<p>import matplotlib.pyplot as plt<br>input_values = [1, 2, 3, 4, 5]<br>squares = [1, 4, 9, 16, 25]<br>plt.plot(input_values, squares, linewidth=5) </p>
+<p>使用 scatter()绘制散点图并设置其样式</p>
+<p>要绘制单个点，可使用函数scatter()，并向它传递一对x和y坐标，它将在指定位置绘制一<br>个点：<br>import matplotlib.pyplot as plt<br>plt.scatter(2, 4, s=200) </p>
+<h1 id="设置图表标题并给坐标轴加上标签"><a href="#设置图表标题并给坐标轴加上标签" class="headerlink" title="设置图表标题并给坐标轴加上标签"></a>设置图表标题并给坐标轴加上标签</h1><p>plt.title(“Square Numbers”, fontsize=24)<br>plt.xlabel(“Value”, fontsize=14)<br>plt.ylabel(“Square of Value”, fontsize=14)</p>
+<h1 id="设置刻度标记的大小-1"><a href="#设置刻度标记的大小-1" class="headerlink" title="设置刻度标记的大小"></a>设置刻度标记的大小</h1><p>plt.tick_params(axis=’both’, which=’major’, labelsize=14)<br>plt.show() </p>
+<p>使用 scatter()绘制一系列点<br>可向scatter()传递两个分别包含x值和y值的列表，<br>import matplotlib.pyplot as plt<br>x_values = [1, 2, 3, 4, 5]<br>y_values = [1, 4, 9, 16, 25]<br>plt.scatter(x_values, y_values, s=100)</p>
+<h1 id="设置图表标题并给坐标轴指定标签"><a href="#设置图表标题并给坐标轴指定标签" class="headerlink" title="设置图表标题并给坐标轴指定标签"></a>设置图表标题并给坐标轴指定标签</h1><p>–snip– </p>
+<p>自动计算数据</p>
+<p>手工计算列表要包含的值可能效率低下，需要绘制的点很多时尤其如此。可以不必手工计算<br>包含点坐标的列表，而让Python循环来替我们完成这种计算。下面是绘制1000个点的代码：<br>import matplotlib.pyplot as plt<br>x_values = list(range(1, 1001))<br>y_values = [x**2 for x in x_values]<br>plt.scatter(x_values, y_values, s=40)</p>
+<h1 id="设置图表标题并给坐标轴加上标签-1"><a href="#设置图表标题并给坐标轴加上标签-1" class="headerlink" title="设置图表标题并给坐标轴加上标签"></a>设置图表标题并给坐标轴加上标签</h1><p>–snip–</p>
+<h1 id="设置每个坐标轴的取值范围"><a href="#设置每个坐标轴的取值范围" class="headerlink" title="设置每个坐标轴的取值范围"></a>设置每个坐标轴的取值范围</h1><p>plt.axis([0, 1100, 0, 1100000])<br>plt.show() </p>
+<p> 删除数据点的轮廓</p>
+<p>matplotlib允许你给散点图中的各个点指定颜色。默认为蓝色点和黑色轮廓，在散点图包含的<br>数据点不多时效果很好。但绘制很多点时，黑色轮廓可能会粘连在一起。要删除数据点的轮廓，<br>可在调用scatter()时传递实参edgecolor=’none’：<br>plt.scatter(x_values, y_values, edgecolor=’none’, s=40) </p>
+<p>自定义颜色</p>
+<p>可向scatter()传递参数c，并将其设置为要使用的颜色的名称，如下所示：<br>plt.scatter(x_values, y_values, c=’red’, edgecolor=’none’, s=40)<br>你还可以使用RGB颜色模式自定义颜色。要指定自定义颜色，可传递参数c，并将其设置为一个元组，其中包含三个0~1之间的小数值，它们分别表示红色、绿色和蓝色分量。例如，下面<br>的代码行创建一个由淡蓝色点组成的散点图：</p>
+<p>plt.scatter(x_values, y_values, c=(0, 0, 0.8), edgecolor=’none’, s=40)<br>值越接近0，指定的颜色越深，值越接近1，指定的颜色越浅。</p>
+<p>使用颜色映射</p>
+<p>颜色映射（colormap）是一系列颜色，它们从起始颜色渐变到结束颜色。在可视化中，颜色<br>映射用于突出数据的规律，例如，你可能用较浅的颜色来显示较小的值，并使用较深的颜色来显<br>示较大的值。<br>模块pyplot内置了一组颜色映射。要使用这些颜色映射，你需要告诉pyplot该如何设置数据<br>集中每个点的颜色。<br>import matplotlib.pyplot as plt<br>x_values = list(range(1001))<br>y_values = [x**2 for x in x_values]<br>plt.scatter(x_values, y_values, c=y_values, cmap=plt.cm.Blues,<br> edgecolor=’none’, s=40)</p>
+<h1 id="设置图表标题并给坐标轴加上标签-2"><a href="#设置图表标题并给坐标轴加上标签-2" class="headerlink" title="设置图表标题并给坐标轴加上标签"></a>设置图表标题并给坐标轴加上标签</h1><p>–snip–</p>
+<p>自动保存图片</p>
+<p>要让程序自动将图表保存到文件中，可将对plt.show()的调用替换为对plt.savefig()的<br>调用：<br>plt.savefig(‘squares_plot.png’, bbox_inches=’tight’) </p>
+<p>随机漫步</p>
+<p>我们将使用Python来生成随机漫步数据，再使用matplotlib以引人瞩目的方式将这<br>些数据呈现出来。随机漫步是这样行走得到的路径：每次行走都完全是随机的，没有明确的方向，<br>结果是由一系列随机决策决定的。你可以这样认为，随机漫步就是蚂蚁在晕头转向的情况下，每次都沿随机的方向前行所经过的路径。</p>
+<p>创建RandomWalk()类</p>
+<p>为模拟随机漫步，我们将创建一个名为RandomWalk的类，它随机地选择前进方向。这个类需<br>要三个属性，其中一个是存储随机漫步次数的变量，其他两个是列表，分别存储随机漫步经过的<br>每个点的x和y坐标。<br>RandomWalk类只包含两个方法：<strong>init</strong> ()和fill_walk()，其中后者计算随机漫步经过的所<br>有点。下面先来看看<strong>init</strong>()，如下所示：<br>from random import choice<br>class RandomWalk():<br> “””一个生成随机漫步数据的类”””</p>
+<p>  def <strong>init</strong>(self, num_points=5000):<br>    “””初始化随机漫步的属性”””<br>    self.num_points = num_points</p>
+<h1 id="所有随机漫步都始于-0-0"><a href="#所有随机漫步都始于-0-0" class="headerlink" title="所有随机漫步都始于(0, 0)"></a>所有随机漫步都始于(0, 0)</h1><pre><code>self.x_values = [0]
+self.y_values = [0] </code></pre><p>选择方向</p>
+<p>我们将使用fill_walk()来生成漫步包含的点，并决定每次漫步的方向，如下所示。请将这<br>个方法添加到random_walk.py中：</p>
+<p> def fill_walk(self):<br> “””计算随机漫步包含的所有点”””</p>
+<h1 id="不断漫步，直到列表达到指定的长度"><a href="#不断漫步，直到列表达到指定的长度" class="headerlink" title="不断漫步，直到列表达到指定的长度"></a>不断漫步，直到列表达到指定的长度</h1><pre><code>while len(self.x_values) &lt; self.num_points: </code></pre><h1 id="决定前进方向以及沿这个方向前进的距离"><a href="#决定前进方向以及沿这个方向前进的距离" class="headerlink" title="决定前进方向以及沿这个方向前进的距离"></a>决定前进方向以及沿这个方向前进的距离</h1><pre><code>x_direction = choice([1, -1])
+x_distance = choice([0, 1, 2, 3, 4])
+x_step = x_direction * x_distance
 
-        <div class="article-info info-on-right">
-          
-          
+ y_direction = choice([1, -1])
+ y_distance = choice([0, 1, 2, 3, 4])
+ y_step = y_direction * y_distance</code></pre><h1 id="拒绝原地踏步"><a href="#拒绝原地踏步" class="headerlink" title="拒绝原地踏步"></a>拒绝原地踏步</h1><pre><code>if x_step == 0 and y_step == 0:
+    continue</code></pre><h1 id="计算下一个点的x和y值"><a href="#计算下一个点的x和y值" class="headerlink" title="计算下一个点的x和y值"></a>计算下一个点的x和y值</h1><pre><code>next_x = self.x_values[-1] + x_step
+next_y = self.y_values[-1] + y_step
 
+self.x_values.append(next_x)
+self.y_values.append(next_y) </code></pre><p>绘制随机漫步图</p>
+<p>import matplotlib.pyplot as plt<br>from random_walk import RandomWalk </p>
+<h1 id="创建一个RandomWalk实例，并将其包含的点都绘制出来"><a href="#创建一个RandomWalk实例，并将其包含的点都绘制出来" class="headerlink" title="创建一个RandomWalk实例，并将其包含的点都绘制出来"></a>创建一个RandomWalk实例，并将其包含的点都绘制出来</h1><p>rw = RandomWalk()<br>rw.fill_walk()<br>plt.scatter(rw.x_values, rw.y_values, s=15)<br>plt.show() </p>
+<p>绘制随机漫步图</p>
+<p>import matplotlib.pyplot as plt<br>from random_walk import RandomWalk </p>
+<h1 id="创建一个RandomWalk实例，并将其包含的点都绘制出来-1"><a href="#创建一个RandomWalk实例，并将其包含的点都绘制出来-1" class="headerlink" title="创建一个RandomWalk实例，并将其包含的点都绘制出来"></a>创建一个RandomWalk实例，并将其包含的点都绘制出来</h1><p>rw = RandomWalk()<br>rw.fill_walk()<br>plt.scatter(rw.x_values, rw.y_values, s=15)<br>plt.show() </p>
+<p>我们首先导入了模块pyplot和RandomWalk类，然后创建了一个RandomWalk实例，并将其存储<br>到rw中（见Ø），再调用fill_walk()。在处，我们将随机漫步包含的x和y值传递给scatter()，<br>并选择了合适的点尺寸。图15-8显示了包含5000个点的随机漫步图（本节的示意图未包含<br>matplotlib查看器部分，但你运行rw_visual.py时，依然会看到）。</p>
+<p>模拟多次随机漫步</p>
+<p>每次随机漫步都不同，因此探索可能生成的各种模式很有趣。要在不多次运行程序的情况下<br>使用前面的代码模拟多次随机漫步，一种办法是将这些代码放在一个while循环中，</p>
+<p>import matplotlib.pyplot as plt<br>from random_walk import RandomWalk</p>
+<h1 id="只要程序处于活动状态，就不断地模拟随机漫步"><a href="#只要程序处于活动状态，就不断地模拟随机漫步" class="headerlink" title="只要程序处于活动状态，就不断地模拟随机漫步"></a>只要程序处于活动状态，就不断地模拟随机漫步</h1><p>while True:</p>
+<h1 id="创建一个RandomWalk实例，并将其包含的点都绘制出来-2"><a href="#创建一个RandomWalk实例，并将其包含的点都绘制出来-2" class="headerlink" title="创建一个RandomWalk实例，并将其包含的点都绘制出来"></a>创建一个RandomWalk实例，并将其包含的点都绘制出来</h1><p> rw = RandomWalk()<br> rw.fill_walk()<br> plt.scatter(rw.x_values, rw.y_values, s=15)<br> plt.show()<br> keep_running = input(“Make another walk? (y/n): “)<br> if keep_running == ‘n’:<br>    break </p>
+<p>设置随机漫步图的样式</p>
+<p>给点着色</p>
+<p>我们将使用颜色映射来指出漫步中各点的先后顺序，并删除每个点的黑色轮廓，让它们的颜<br>色更明显。为根据漫步中各点的先后顺序进行着色，我们传递参数c，并将其设置为一个列表，<br>其中包含各点的先后顺序。由于这些点是按顺序绘制的，因此给参数c指定的列表只需包含数字<br>1~5000，如下所示：</p>
+<p>–snip–<br>while True:<br>     # 创建一个RandomWalk实例，并将其包含的点都绘制出来<br>     rw = RandomWalk()<br>     rw.fill_walk()<br>     point_numbers = list(range(rw.num_points))<br>     plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues,<br>     edgecolor=’none’, s=15)<br>     plt.show()<br>     keep_running = input(“Make another walk? (y/n): “)<br>     –snip– </p>
+<p>重新绘制起点和终点</p>
+<p>除了给随机漫步的各个点着色，以指出它们的先后顺序外，如果还能呈现随机漫步的起点和<br>终点就更好了。为此，可在绘制随机漫步图后重新绘制起点和终点。我们让起点和终点变得更大，<br>并显示为不同的颜色.</p>
+<p>–snip–<br>while True:<br> –snip–<br> plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues,<br> edgecolor=’none’, s=15)</p>
+<h1 id="突出起点和终点"><a href="#突出起点和终点" class="headerlink" title="突出起点和终点"></a>突出起点和终点</h1><p> plt.scatter(0, 0, c=’green’, edgecolors=’none’, s=100)<br> plt.scatter(rw.x_values[-1], rw.y_values[-1], c=’red’, edgecolors=’none’,<br> s=100)</p>
+<p> plt.show() </p>
+<p>为突出起点，我们使用绿色绘制点(0, 0)，并使其比其他点大（s=100）。为突出终点，我们在<br>漫步包含的最后一个x和y值处绘制一个点，将其颜色设置为红色，并将尺寸设置为100。请务必<br>将这些代码放在调用plt.show()的代码前面，确保在其他点的上面绘制起点和终点。</p>
+<p>隐藏坐标轴</p>
+<p>下面来隐藏这个图表中的坐标轴，以免我们注意的是坐标轴而不是随机漫步路径。要隐藏坐<br>标轴<br>–snip–<br>while True:<br> –snip–<br> plt.scatter(rw.x_values[-1], rw.y_values[-1], c=’red’, edgecolors=’none’,<br> s=100)</p>
+<h1 id="隐藏坐标轴"><a href="#隐藏坐标轴" class="headerlink" title="隐藏坐标轴"></a>隐藏坐标轴</h1><p> plt.axes().get_xaxis().set_visible(False)<br> plt.axes().get_yaxis().set_visible(False)</p>
+<p> plt.show()<br> –snip–<br>为修改坐标轴，使用了函数plt.axes()（见Ø）来将每条坐标轴的可见性都设置为False。随<br>着你越来越多地进行数据可视化，经常会看到这种串接方法的方式。</p>
+<p>增加点数</p>
+<p>下面来增加点数，以提供更多的数据。为此，我们在创建RandomWalk实例时增大num_points<br>的值，并在绘图时调整每个点的大小，如下所示：</p>
+<p>–snip–<br>while True:<br> #创建一个RandomWalk实例，并将其包含的点都绘制出来<br> rw = RandomWalk(50000)<br> rw.fill_walk()</p>
+<h1 id="绘制点并将图形显示出来"><a href="#绘制点并将图形显示出来" class="headerlink" title="绘制点并将图形显示出来"></a>绘制点并将图形显示出来</h1><p> point_numbers = list(range(rw.num_points))<br> plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues,<br> edgecolor=’none’, s=1)<br> –snip– </p>
+<p>这个示例模拟了一次包含50 000个点的随机漫步（以模拟现实情况），并将每个点的大小都<br>设置为1。最终的随机漫步图更纤细，犹如云朵，如图15-10所示。正如你看到的，我们使用简单<br>的散点图制作出了一件艺术品！<br>请尝试修改上述代码，看看将漫步包含的点数增加到多少后，程序的运行速度变得极其缓慢<br>或绘制出的图形变得很难看。</p>
+<p>调整尺寸以适合屏幕</p>
+<p>–snip–<br>while True:</p>
+<h1 id="创建一个RandomWalk实例，并将其包含的点都绘制出来-3"><a href="#创建一个RandomWalk实例，并将其包含的点都绘制出来-3" class="headerlink" title="创建一个RandomWalk实例，并将其包含的点都绘制出来"></a>创建一个RandomWalk实例，并将其包含的点都绘制出来</h1><p> rw = RandomWalk()<br> rw.fill_walk()</p>
+<h1 id="设置绘图窗口的尺寸"><a href="#设置绘图窗口的尺寸" class="headerlink" title="设置绘图窗口的尺寸"></a>设置绘图窗口的尺寸</h1><p> plt.figure(figsize=(10, 6))<br> –snip– </p>
+<p>函数figure()用于指定图表的宽度、高度、分辨率和背景色。你需要给形参figsize指定一个<br>元组，向matplotlib指出绘图窗口的尺寸，单位为英寸。<br>Python假定屏幕分辨率为80像素/英寸，如果上述代码指定的图表尺寸不合适，可根据需要调<br>整其中的数字。如果你知道自己的系统的分辨率，可使用形参dpi向figure()传递该分辨率，以<br>有效地利用可用的屏幕空间，如下所示：<br>plt.figure(dpi=128, figsize=(10, 6)) </p>
+<p>使用 Pygal 模拟掷骰子</p>
+<p>我们将使用Python可视化包Pygal来生成可缩放的矢量图形文件。对于需要在尺寸<br>不同的屏幕上显示的图表，这很有用，因为它们将自动缩放，以适合观看者的屏幕。如果你打算<br>以在线方式使用图表，请考虑使用Pygal来生成它们，这样它们在任何设备上显示时都会很美观。<br>在这个项目中，我们将对掷骰子的结果进行分析。掷6面的常规骰子时，可能出现的结果为<br>1~6点，且出现每种结果的可能性相同。然而，如果同时掷两个骰子，某些点数出现的可能性将<br>比其他点数大。为确定哪些点数出现的可能性最大，我们将生成一个表示掷骰子结果的数据集，<br>并根据结果绘制出一个图形。</p>
+<p>创建 Die 类</p>
+<p>from random import randint<br>class Die():<br> “””表示一个骰子的类”””</p>
+<p>  def <strong>init</strong>(self, num_sides=6):<br> “””骰子默认为6面”””<br> self.num_sides = num_sides</p>
+<p> def roll(self):<br> “”””返回一个位于1和骰子面数之间的随机值”””<br>  return randint(1, self.num_sides) </p>
+<pre><code>方法__init__()接受一个可选参数。创建这个类的实例时，如果没有指定任何实参，面数默</code></pre><p>认为6；如果指定了实参，这个值将用于设置骰子的面数（见Ø）。骰子是根据面数命名的，6面<br>的骰子名为D6，8面的骰子名为D8，以此类推。<br>    方法roll()使用函数randint()来返回一个1和面数之间的随机数（见）。这个函数可能返回起<br>始值1、终止值num_sides或这两个值之间的任何整数。</p>
+<p>掷骰子</p>
+<p>from die import Die</p>
+<h1 id="创建一个D6"><a href="#创建一个D6" class="headerlink" title="创建一个D6"></a>创建一个D6</h1><p>  die = Die()</p>
+<h1 id="掷几次骰子，并将结果存储在一个列表中"><a href="#掷几次骰子，并将结果存储在一个列表中" class="headerlink" title="掷几次骰子，并将结果存储在一个列表中"></a>掷几次骰子，并将结果存储在一个列表中</h1><p>results = []<br> for roll_num in range(100):<br>     result = die.roll()<br>     results.append(result)</p>
+<p>print(results) </p>
+<p>在Ø处，我们创建了一个Die实例，其面数为默认值6。在处，我们掷骰子100次，并将每次<br>的结果都存储在列表results中。</p>
+<p>分析结果</p>
+<p>为分析掷一个D6骰子的结果，我们计算每个点数出现的次数：</p>
+<p>die_visual.py</p>
+<p>–snip–</p>
+<h1 id="掷几次骰子，并将结果存储在一个列表中-1"><a href="#掷几次骰子，并将结果存储在一个列表中-1" class="headerlink" title="掷几次骰子，并将结果存储在一个列表中"></a>掷几次骰子，并将结果存储在一个列表中</h1><p>results = []<br> for roll_num in range(1000):<br>     result = die.roll()<br>     results.append(result)</p>
+<h1 id="分析结果"><a href="#分析结果" class="headerlink" title="分析结果"></a>分析结果</h1><p>frequencies = [] </p>
+<p>for value in range(1, die.num_sides+1):<br>  frequency = results.count(value)<br>  frequencies.append(frequency)</p>
+<p>print(frequencies) </p>
+<p>由于我们将使用Pygal来进行分析，而不是将结果打印出来，因此可以将模拟掷骰子的次数<br>增加到1000（见Ø）。为分析结果，我们创建了空列表frequencies，用于存储每种点数出现的次<br>数。在处，我们遍历可能的点数（这里为1~6），计算每种点数在results中出现了多少次（见），<br>并将这个值附加到列表frequencies的末尾.</p>
+<p>绘制直方图</p>
+<p>die_visual.py </p>
+<p>import pygal<br>–snip–</p>
+<h1 id="分析结果-1"><a href="#分析结果-1" class="headerlink" title="分析结果"></a>分析结果</h1><p>frequencies = []<br>for value in range(1, die.num_sides+1):<br> frequency = results.count(value)<br> frequencies.append(frequency)</p>
+<h1 id="对结果进行可视化"><a href="#对结果进行可视化" class="headerlink" title="对结果进行可视化"></a>对结果进行可视化</h1><p>hist = pygal.Bar()<br>hist.title = “Results of rolling one D6 1000 times.”<br>hist.x_labels = [‘1’, ‘2’, ‘3’, ‘4’, ‘5’, ‘6’]<br>hist.x_title = “Result”<br>hist.y_title = “Frequency of Result”<br>hist.add(‘D6’, frequencies)<br>hist.render_to_file(‘die_visual.svg’) </p>
+<p>为创建条形图，我们创建了一个pygal.Bar()实例，并将其存储在hist中（见Ø）。接下来，<br>我们设置hist的属性title（用于标示直方图的字符串），将掷D6骰子的可能结果用作x轴的标签<br>（见），并给每个轴都添加了标题。在处，我们使用add()将一系列值添加到图表中（向它传递要给添加的值指定的标签，还有一个列表，其中包含将出现在图表中的值）。最后，我们将这个<br>图表渲染为一个SVG文件，这种文件的扩展名必须为.svg。<br>要查看生成的直方图，最简单的方式是使用Web浏览器。为此，在任何Web浏览器中新建一<br>个标签页，再在其中打开文件die_visual.svg（它位于die_visual.py所在的文件夹中）。你将看到一个类似于图15-11所示的图表。</p>
+<p>注意，Pygal让这个图表具有交互性：如果你将鼠标指向该图表中的任何条形，将看到与之<br>相关联的数据。在同一个图表中绘制多个数据集时，这项功能显得特别有用。</p>
+<p>同时掷两个骰子</p>
+<p>import pygal<br>from die import Die</p>
+<h1 id="创建两个D6骰子"><a href="#创建两个D6骰子" class="headerlink" title="创建两个D6骰子"></a>创建两个D6骰子</h1><p>die_1 = Die()<br>die_2 = Die() </p>
+<h1 id="掷骰子多次，并将结果存储到一个列表中"><a href="#掷骰子多次，并将结果存储到一个列表中" class="headerlink" title="掷骰子多次，并将结果存储到一个列表中"></a>掷骰子多次，并将结果存储到一个列表中</h1><p>results = []<br>for roll_num in range(1000):<br> result = die_1.roll() + die_2.roll()<br> results.append(result)</p>
+<h1 id="分析结果-2"><a href="#分析结果-2" class="headerlink" title="分析结果"></a>分析结果</h1><p>frequencies = []<br> max_result = die_1.num_sides + die_2.num_sides<br> for value in range(2, max_result+1):<br> frequency = results.count(value)<br> frequencies.append(frequency)</p>
+<h1 id="可视化结果"><a href="#可视化结果" class="headerlink" title="可视化结果"></a>可视化结果</h1><p>hist = pygal.Bar()<br> hist.title = “Results of rolling two D6 dice 1000 times.”<br>hist.x_labels = [‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’, ‘9’, ‘10’, ‘11’, ‘12’]<br>hist.x_title = “Result”<br>hist.y_title = “Frequency of Result”<br>hist.add(‘D6 + D6’, frequencies)<br>hist.render_to_file(‘dice_visual.svg’) </p>
+<p>创建两个Die实例后，我们掷骰子多次，并计算每次的总点数（见Ø）。可能出现的最大点数<br>12为两个骰子的最大可能点数之和，我们将这个值存储在了max_result中（见）。可能出现的最<br>小总点数2为两个骰子的最小可能点数之和。分析结果时，我们计算2到max_result的各种点数出<br>现的次数（见）。我们原本可以使用range(2, 13)，但这只适用于两个D6骰子。模拟现实世界<br>的情形时，最好编写可轻松地模拟各种情形的代码。前面的代码让我们能够模拟掷任何两个骰子<br>的情形，而不管这些骰子有多少面。<br>创建图表时，我们修改了标题、x轴标签和数据系列（见）。（如果列表x_labels比这里所示<br>的长得多，那么编写一个循环来自动生成它将更合适。）<br>运行这些代码后，在浏览器中刷新显示图表的标签页，你将看到如图15-12所示的图表。<br>这个图表显示了掷两个D6骰子时得到的大致结果。正如你看到的，总点数为2或12的可能性<br>最小，而总点数为7的可能性最大，这是因为在6种情况下得到的总点数都为7。这6种情况如下：<br>1和6、2和5、3和4、4和3、5和2、6和1。</p>
+<p>同时掷两个面数不同的骰子</p>
+<p>from die import Die<br>import pygal</p>
+<h1 id="创建一个D6和一个D10"><a href="#创建一个D6和一个D10" class="headerlink" title="创建一个D6和一个D10"></a>创建一个D6和一个D10</h1><p>die_1 = Die()<br>die_2 = Die(10)</p>
+<h1 id="掷骰子多次，并将结果存储在一个列表中"><a href="#掷骰子多次，并将结果存储在一个列表中" class="headerlink" title="掷骰子多次，并将结果存储在一个列表中"></a>掷骰子多次，并将结果存储在一个列表中</h1><p>results = []<br>for roll_num in range(50000):<br> result = die_1.roll() + die_2.roll()<br> results.append(result)</p>
+<h1 id="分析结果-3"><a href="#分析结果-3" class="headerlink" title="分析结果"></a>分析结果</h1><p>–snip–</p>
+<h1 id="可视化结果-1"><a href="#可视化结果-1" class="headerlink" title="可视化结果"></a>可视化结果</h1><p>hist = pygal.Bar()<br>hist.title = “Results of rolling a D6 and a D10 50,000 times.”<br>hist.x_labels = [‘2’, ‘3’, ‘4’, ‘5’, ‘6’, ‘7’, ‘8’, ‘9’, ‘10’, ‘11’, ‘12’,<br> ‘13’, ‘14’, ‘15’, ‘16’]<br>hist.x_title = “Result”<br>hist.y_title = “Frequency of Result”<br>hist.add(‘D6 + D10’, frequencies)<br>hist.render_to_file(‘dice_visual.svg’) </p>
+<p>为创建D10骰子，我们在创建第二个Die实例时传递了实参10（见Ø）。我们还修改了第一个<br>循环，以模拟掷骰子50 000次而不是1000次。可能出现的最小总点数依然是2，但现在可能出现<br>的最大总点数为16，因此我们相应地调整了标题、x轴标签和数据系列标签（见）。<br>图15-13显示了最终的图表。可能性最大的点数不是一个，而是5个，这是因为导致出现最小<br>点数和最大点数的组合都只有一种（1和1以及6和10），但面数较小的骰子限制了得到中间点数的<br>组合数：得到总点数7、8、9、10和11的组合数都是6种。因此，这些总点数是最常见的结果，它<br>们出现的可能性相同。</p>
+<p>Homework:</p>
+<p>import pygal<br>from die import Die</p>
+<h1 id="创建两个D6骰子-1"><a href="#创建两个D6骰子-1" class="headerlink" title="创建两个D6骰子"></a>创建两个D6骰子</h1><p>die_1 = Die()<br>die_2 = Die() </p>
+<h1 id="掷骰子多次，并将结果存储到一个列表中-1"><a href="#掷骰子多次，并将结果存储到一个列表中-1" class="headerlink" title="掷骰子多次，并将结果存储到一个列表中"></a>掷骰子多次，并将结果存储到一个列表中</h1><p>results = []<br>for roll_num in range(100000):<br> result = die_1.roll() * die_2.roll()<br> results.append(result)</p>
+<h1 id="分析结果-4"><a href="#分析结果-4" class="headerlink" title="分析结果"></a>分析结果</h1><p>frequencies = []<br>max_result = die_1.num_sides * die_2.num_sides<br>for value in range(1, max_result+1):<br> frequency = results.count(value)<br> frequencies.append(frequency)</p>
+<h1 id="可视化结果-2"><a href="#可视化结果-2" class="headerlink" title="可视化结果"></a>可视化结果</h1><p>hist = pygal.Bar()<br>hist.title = “Results of rolling two D6 dice 100000 times.”<br>hist.x_labels = []<br>for value in range(1, max_result+1):<br>    hist.x_labels.append(value)<br>hist.x_title = “Result”<br>hist.y_title = “Frequency of Result”<br>hist.add(‘D6 * D6’, frequencies)<br>hist.render_to_file(‘dice_visual.svg’) </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/01/%E9%A1%B9%E7%9B%AE1-%20%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/12/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2020-09-12T11:46:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/12/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python 学习入门与实践 - 测试代码</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/12/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81/">Python 学习入门与实践 - 测试代码</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/16/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%96%87%E4%BB%B6%E5%92%8C%E5%BC%82%E5%B8%B8/" class="archive-article-date">
-  	<time datetime="2020-08-16T15:22:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/16/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%96%87%E4%BB%B6%E5%92%8C%E5%BC%82%E5%B8%B8/">Python 学习入门与实践 - 文件和异常</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/09/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2020-07-09T14:16:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/09/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E7%B1%BB/">Python 学习入门与实践 - 类</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-06-25T09:46:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/25/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%87%BD%E6%95%B0/">Python 学习入门与实践 - 函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/13/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-While/" class="archive-article-date">
-  	<time datetime="2020-06-13T02:51:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/13/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-While/">Python 学习入门与实践 - While</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8/" class="archive-article-date">
-  	<time datetime="2020-06-07T07:02:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/07/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E5%AD%97%E5%85%B8/">Python 学习入门与实践 - 字典</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/31/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-if%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
-  	<time datetime="2020-05-31T09:15:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/31/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-if%E8%AF%AD%E5%8F%A5/">Python 学习入门与实践 - if语句</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/26/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%93%8D%E4%BD%9C%E5%88%97%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2020-05-26T00:38:02.658Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/Python-%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5-%E6%93%8D%E4%BD%9C%E5%88%97%E8%A1%A8/">Python-学习入门与实践-操作列表</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/24/%E5%BA%95%E5%B1%82%E4%BA%BA%E6%B0%91%E7%9A%84996/" class="archive-article-date">
-  	<time datetime="2020-05-24T15:04:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/24/%E5%BA%95%E5%B1%82%E4%BA%BA%E6%B0%91%E7%9A%84996/">底层人民的996</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +460,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
